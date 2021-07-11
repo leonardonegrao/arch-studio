@@ -5,6 +5,7 @@ const colors = {
   lightGrey: '#c8ccd8',
   veryLightGrey: '#eeeff4',
   red: '#df5656',
+  white: '#fff'
 }
 
 export const typographyVariants = {
@@ -34,7 +35,7 @@ export const typographyVariants = {
   body: {
     fontSize: '15px',
     lineHeight: '25px',
-    fontWeight: '600',
+    fontWeight: '500',
   }
 }
 

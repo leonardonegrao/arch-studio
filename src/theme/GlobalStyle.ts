@@ -5,6 +5,8 @@ export const GlobalStyle = createGlobalStyle`
     * {
       box-sizing: border-box;
       font-family: 'Spartan', sans-serif;
+      margin: 0;
+      padding: 0;
     }
 
     ${normalize}

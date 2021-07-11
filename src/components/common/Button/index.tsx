@@ -11,7 +11,7 @@ const ButtonDefault = css`
   height: 72px;
 
   svg {
-    padding-left: 24px;
+    margin-left: 24px;
   }
 `
 
@@ -20,7 +20,7 @@ const ButtonSquare = css`
   width: 80px;
 `
 
-const ButtonWrapper = styled.button<PropsButtonWrapper>`
+export const ButtonWrapper = styled.button<PropsButtonWrapper>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,11 +48,11 @@ const ButtonWrapper = styled.button<PropsButtonWrapper>`
   }
 `
 
-export default function Button({ variant, children = null, ...props }) {
+export default function Button({ variant, children = null, showArrow = true, ...props }) {
   return (
     <ButtonWrapper variant={variant} {...props}>
         {children && children}
-        <ArrowIcon color="#fff" />
+        {showArrow && <ArrowIcon color="#fff" />}
     </ButtonWrapper>
   )
 }

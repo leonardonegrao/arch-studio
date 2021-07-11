@@ -1,6 +1,9 @@
 import Link from 'next/link'
 import styled from 'styled-components'
+
 import Logo from '../../theme/Logo'
+
+import Button from '../common/Button'
 
 const LayoutWrapper = styled.div`
   display: flex;
@@ -48,7 +51,43 @@ const HeaderMenu = styled.nav`
   margin-left: 94px;
 `
 
-const HeaderMenuOption = styled.div`
+const Footer = styled.footer`
+  display: flex;
+  position: relative;
+
+  max-width: 1110px;
+
+  margin-top: 200px;
+
+  .logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 200px;
+    width: 200px;
+
+    background: ${({ theme }) => theme.colors.veryDarkBlue};
+  }
+
+  .menu-wrapper {
+    display: flex;
+    align-items: center;
+
+    padding-left: 56px;
+
+    background: ${({ theme }) => theme.colors.veryLightGrey};
+    min-width: 784px;
+  }
+
+  .button-wrapper {
+    position: absolute;
+    top: 64px;
+    right: 0;
+  }
+`
+
+const MenuOption = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -61,7 +100,7 @@ const HeaderMenuOption = styled.div`
   a {
     font-size: ${({ theme }) => theme.typographyVariants.body.fontSize};
     line-height: ${({ theme }) => theme.typographyVariants.body.lineHeight};
-    font-weight: ${({ theme }) => theme.typographyVariants.body.fontWeight};
+    font-weight: '600';
 
     text-decoration: none;
     color: ${({ theme }) => theme.colors.mediumGrey};
@@ -86,7 +125,7 @@ export default function Layout({ children }) {
           <Logo />
 
           <HeaderMenu>
-            <HeaderMenuOption>
+            <MenuOption>
               <Link href="/portfolio">
                 <a>Portfolio</a>
               </Link>
@@ -98,9 +137,9 @@ export default function Layout({ children }) {
                   marginTop: '8px'
                 }}
               />
-            </HeaderMenuOption>
+            </MenuOption>
             
-            <HeaderMenuOption>
+            <MenuOption>
               <Link href="/about-us">
                 <a>About Us</a>
               </Link>
@@ -113,9 +152,9 @@ export default function Layout({ children }) {
                   visibility: 'hidden',
                 }}
               />
-            </HeaderMenuOption>
+            </MenuOption>
 
-            <HeaderMenuOption>
+            <MenuOption>
               <Link href="/contact">
                 <a>Contact</a>
               </Link>
@@ -128,10 +167,57 @@ export default function Layout({ children }) {
                   visibility: 'hidden',
                 }}
               />
-            </HeaderMenuOption>
+            </MenuOption>
           </HeaderMenu>
         </Header>
         {children}
+        <Footer>
+          <div className="logo-wrapper">
+            <Logo color="white" />
+          </div>
+
+          <div className="menu-wrapper">
+            <MenuOption>
+              <Link href="/portfolio">
+                <a>Portfolio</a>
+              </Link>
+            </MenuOption>
+            
+            <MenuOption>
+              <Link href="/about-us">
+                <a>About Us</a>
+              </Link>
+              <div
+                style={{
+                  background: '#1B1D23',
+                  height: '1px',
+                  width: '24px',
+                  marginTop: '8px',
+                  visibility: 'hidden',
+                }}
+              />
+            </MenuOption>
+
+            <MenuOption>
+              <Link href="/contact">
+                <a>Contact</a>
+              </Link>
+              <div
+                style={{
+                  background: '#1B1D23',
+                  height: '1px',
+                  width: '24px',
+                  marginTop: '8px',
+                  visibility: 'hidden',
+                }}
+              />
+            </MenuOption>
+          </div>
+        
+          <div className="button-wrapper">
+            <Button variant="default">See our portfolio</Button>
+          </div>
+        </Footer>
       </PageContent>
     </LayoutWrapper>
   )
