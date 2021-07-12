@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
 import Logo from '../../theme/Logo'
 
@@ -116,10 +117,16 @@ const MenuOption = styled.div`
 export default function Layout({ children }) {
   return (
     <LayoutWrapper>
-      <PageMarker>
-        <div />
-        <p>Home</p>
-      </PageMarker>
+      <motion.div
+        initial={{ y: -500 }}
+        animate={{ y: 0 }}
+        transition={{ ease: 'easeInOut', duration: 1.5 }}
+      >
+        <PageMarker>
+          <div />
+          <p>Home</p>
+        </PageMarker>
+      </motion.div>
       <PageContent>
         <Header>
           <Logo />

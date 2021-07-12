@@ -1,6 +1,7 @@
 import React from 'react'
-import styled from 'styled-components'
 import Image from 'next/image'
+import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
 import Typography from '../../foundation/Typography'
 import Button, { ButtonWrapper } from '../../common/Button'
@@ -87,6 +88,27 @@ const carouselItems: CarouselItem[] = [
   },
 ]
 
+const variants = {
+  enter: (direction: number) => {
+    return {
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0
+    };
+  },
+  center: {
+    zIndex: 1,
+    x: 0,
+    opacity: 1
+  },
+  exit: (direction: number) => {
+    return {
+      zIndex: 0,
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0
+    };
+  }
+};
+
 export default function Carousel() {
   const [activeItem, setActiveItem] = React.useState(carouselItems[0])
 
@@ -115,26 +137,38 @@ export default function Carousel() {
           <Button variant="default">See our portfolio</Button>
         </div>
       </CarouselItemInfo>
-      <Image
-        src={activeItem.img}
-        className="carousel-background"
-        alt="Image of the project"
-      />
-      <CarouselOptionsSelector>
-        {carouselItems.map((item, index) => {
-          return (
-            <Button
-              variant="square"
-              showArrow={false}
-              className={ activeItem.slug === carouselItems[index].slug ? 'active' : 'inactive' }
-              key={item.slug}
-              onClick={() => handleActiveItemChange(index)}
-            >
-              0{index + 1}
-            </Button>
-          )
-        })}
-      </CarouselOptionsSelector>
+      <motion.div
+        initial={{ x: 1110 }}
+        animate={{ x: 0 }}
+        transition={{ ease: "easeOut", duration: 1.2 }}
+      >
+        <Image
+          src={activeItem.img}
+          className="carousel-background"
+          alt="Image of the project"
+        />
+      </motion.div>
+      <motion.div
+        initial={{ x: -1110 }}
+        animate={{ x: 0 }}
+        transition={{ ease: "easeOut", duration: 1.2 }}
+      >
+        <CarouselOptionsSelector>
+          {carouselItems.map((item, index) => {
+            return (
+              <Button
+                variant="square"
+                showArrow={false}
+                className={ activeItem.slug === carouselItems[index].slug ? 'active' : 'inactive' }
+                key={item.slug}
+                onClick={() => handleActiveItemChange(index)}
+              >
+                0{index + 1}
+              </Button>
+            )
+          })}
+        </CarouselOptionsSelector>
+      </motion.div>
     </CarouselWrapper>
   )
 }
