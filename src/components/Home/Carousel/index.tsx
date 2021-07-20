@@ -1,12 +1,17 @@
 import React from 'react'
 import Image from 'next/image'
-import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
 import Typography from '../../foundation/Typography'
-import Button, { ButtonWrapper } from '../../common/Button'
+import Button from '../../common/Button'
 
-import projectParamourImg from '../../../../public/assets/home/desktop/image-hero-paramour.jpg'
+import { 
+  CarouselWrapper,
+  CarouselImageWrapper,
+  CarouselOptionsSelector,
+  CarouselItemInfo
+} from './styles'
+
 import projectSeraphImg from '../../../../public/assets/home/desktop/image-hero-seraph.jpg'
 import projectFederalTowerImg from '../../../../public/assets/home/desktop/image-hero-federal.jpg'
 import projectTrinityBankImg from '../../../../public/assets/home/desktop/image-hero-trinity.jpg'
@@ -14,106 +19,45 @@ import projectTrinityBankImg from '../../../../public/assets/home/desktop/image-
 interface CarouselItem {
   title: string
   description: string
-  img: StaticImageData
+  imgSrcSet: string
   slug: string
 }
-
-const CarouselWrapper = styled.div`
-  position: relative;
-
-  .carousel-background {
-    width: 1110px;
-    height: 720px;
-    filter: brightness(70%);
-  }
-`
-
-const CarouselItemInfo = styled.div`
-  position: absolute;
-  top: 180px;
-  left: 190px;
-  z-index: 1;
-
-  max-width: 544px;
-`
-
-const CarouselOptionsSelector = styled.div`
-  position: absolute;
-  display: flex;
-
-  bottom: 0px;
-  left: -80px;
-
-  ${ButtonWrapper} {
-    background: #fff;
-    color: ${({ theme }) => theme.colors.mediumGrey};
-
-    &.active {
-      background: ${({ theme }) => theme.colors.veryDarkBlue};
-      color: #fff;
-    }
-
-    &.inactive {
-      &:hover {
-        background: ${({ theme }) => theme.colors.veryLightGrey}
-      }
-    }
-  }
-`
 
 const carouselItems: CarouselItem[] = [
   {
     title: 'Project Paramour',
     description: 'Project made for an art museum near Southwest London. Project Paramour is a statement of bold, modern architecture.',
-    img: projectParamourImg,
+    imgSrcSet: `
+      /assets/home/mobile/image-hero-paramour.jpg 375w,
+      /assets/home/tablet/image-hero-paramour.jpg 573w,
+      /assets/home/desktop/image-hero-paramour.jpg 1110w
+    `,
     slug: 'project-paramour'
   },
-  {
-    title: 'Seraph Station',
-    description: 'The Seraph Station project challenged us to design a unique station that would transport people through time. The result is a fresh and futuristic model inspired by space stations.',
-    img: projectSeraphImg,
-    slug: 'seraph-station'
-  },
-  {
-    title: 'Federal II Tower',
-    description: 'A sequel theme project for a tower originally built in the 1800s. We achieved this with a striking look of brutal minimalism with modern touches.',
-    img: projectFederalTowerImg,
-    slug: 'federal-ii-tower'
-  },
-  {
-    title: 'Trinity Bank Tower',
-    description: 'Trinity Bank challenged us to make a concept for a 84 story building located in the middle of a city with a high earthquake frequency. For this project we used curves to blend design and stability to meet our objectives.',
-    img: projectTrinityBankImg,
-    slug: 'trinity-bank-tower'
-  },
+  // {
+  //   title: 'Seraph Station',
+  //   description: 'The Seraph Station project challenged us to design a unique station that would transport people through time. The result is a fresh and futuristic model inspired by space stations.',
+  //   img: projectSeraphImg,
+  //   slug: 'seraph-station'
+  // },
+  // {
+  //   title: 'Federal II Tower',
+  //   description: 'A sequel theme project for a tower originally built in the 1800s. We achieved this with a striking look of brutal minimalism with modern touches.',
+  //   img: projectFederalTowerImg,
+  //   slug: 'federal-ii-tower'
+  // },
+  // {
+  //   title: 'Trinity Bank Tower',
+  //   description: 'Trinity Bank challenged us to make a concept for a 84 story building located in the middle of a city with a high earthquake frequency. For this project we used curves to blend design and stability to meet our objectives.',
+  //   img: projectTrinityBankImg,
+  //   slug: 'trinity-bank-tower'
+  // },
 ]
-
-const variants = {
-  enter: (direction: number) => {
-    return {
-      x: direction > 0 ? 1000 : -1000,
-      opacity: 0
-    };
-  },
-  center: {
-    zIndex: 1,
-    x: 0,
-    opacity: 1
-  },
-  exit: (direction: number) => {
-    return {
-      zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
-      opacity: 0
-    };
-  }
-};
 
 export default function Carousel() {
   const [activeItem, setActiveItem] = React.useState(carouselItems[0])
 
   function handleActiveItemChange(index: number) {
-    console.log(carouselItems[index])
     setActiveItem(carouselItems[index])
   }
 
@@ -142,11 +86,16 @@ export default function Carousel() {
         animate={{ x: 0 }}
         transition={{ ease: "easeOut", duration: 1.2 }}
       >
-        <Image
-          src={activeItem.img}
-          className="carousel-background"
-          alt="Image of the project"
-        />
+        <CarouselImageWrapper>
+          <img
+            srcSet={activeItem.imgSrcSet}
+            sizes="(max-width: 660) 375px,
+              (max-width: 480px) 573px,
+              1110px"
+            className="carousel-background"
+            alt="Image of the project"
+          />
+        </CarouselImageWrapper>
       </motion.div>
       <motion.div
         initial={{ x: -1110 }}

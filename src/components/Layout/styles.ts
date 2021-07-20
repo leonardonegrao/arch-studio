@@ -12,11 +12,9 @@ export const PageContent = styled.div`
 `
 
 export const PageMarker = styled.div`
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
-
-  margin-right: 76px;
 
   div {
     height: 104px;
@@ -30,5 +28,14 @@ export const PageMarker = styled.div`
     writing-mode: vertical-rl;
     letter-spacing: 15px;
     color: ${({ theme }) => theme.colors.lightGrey};
+  }
+  
+  @media (min-width: 768px) {
+    display: flex;
+    margin-right: 33px;
+  }
+
+  @media (min-width: 1200px) {
+    margin-right: 76px;
   }
 `
