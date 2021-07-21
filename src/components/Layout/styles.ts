@@ -2,13 +2,25 @@ import styled from 'styled-components'
 
 export const LayoutWrapper = styled.div`
   display: flex;
-
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
 `
 
 export const PageContent = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+  
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    max-width: 573px;
+  }
 
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    max-width: 1110px;
+  }  
+`
+
+export const HeaderMarkerWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
 `
 
 export const PageMarker = styled.div`

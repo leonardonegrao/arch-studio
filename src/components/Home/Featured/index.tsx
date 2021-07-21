@@ -1,55 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import styled from 'styled-components'
-
 import Typography from '../../foundation/Typography'
 import Button from '../../common/Button'
+import { FeaturedProject, FeaturedProjectsWrapper } from './style'
 
 import imgDelSol from '../../../../public/assets/portfolio/desktop/image-del-sol.jpg'
 import img228b from '../../../../public/assets/portfolio/desktop/image-228b.jpg'
 import imgPrototype from '../../../../public/assets/portfolio/desktop/image-prototype.jpg'
-
-const FeaturedProjectsWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-`
-
-const FeaturedProject = styled.article`
-  position: relative;
-
-  height: 560px;
-  max-width: 350px;
-
-  background: #e1e1e1;
-  img {
-    filter: brightness(65%);
-  }
-
-  a {
-    text-decoration: none;
-    margin-top: 4px;
-    opacity: .75;
-  }
-
-  .number-wrapper {
-    position: absolute;
-
-    top: 32px;
-    right: -5px;
-
-    z-index: 1;
-  }
-
-  .text-content-wrapper {
-    position: absolute;
-
-    bottom: 40px;
-    left: 40px;
-
-    z-index: 1;
-  }
-`
 
 export default function Featured() {
   return (
@@ -83,7 +41,7 @@ export default function Featured() {
           <Image
             src={imgDelSol}
             alt="Image of Project Del Sol"
-
+            layout="fill"
           />
         </FeaturedProject>
         <FeaturedProject>
@@ -102,7 +60,7 @@ export default function Featured() {
           <Image
             src={img228b}
             alt="Image of Project Del Sol"
-
+            layout="fill"
           />
         </FeaturedProject>
         <FeaturedProject>
@@ -121,7 +79,7 @@ export default function Featured() {
           <Image
             src={imgPrototype}
             alt="Image of Project Del Sol"
-
+            layout="fill"
           />
         </FeaturedProject>
       </FeaturedProjectsWrapper>

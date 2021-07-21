@@ -34,6 +34,26 @@ const carouselItems: CarouselItem[] = [
     `,
     slug: 'project-paramour'
   },
+  {
+    title: 'Project Paramour',
+    description: 'Project made for an art museum near Southwest London. Project Paramour is a statement of bold, modern architecture.',
+    imgSrcSet: `
+      /assets/home/mobile/image-hero-paramour.jpg 375w,
+      /assets/home/tablet/image-hero-paramour.jpg 573w,
+      /assets/home/desktop/image-hero-paramour.jpg 1110w
+    `,
+    slug: 'project-station'
+  },
+  {
+    title: 'Project Paramour',
+    description: 'Project made for an art museum near Southwest London. Project Paramour is a statement of bold, modern architecture.',
+    imgSrcSet: `
+      /assets/home/mobile/image-hero-paramour.jpg 375w,
+      /assets/home/tablet/image-hero-paramour.jpg 573w,
+      /assets/home/desktop/image-hero-paramour.jpg 1110w
+    `,
+    slug: 'project-bank-tower'
+  },
   // {
   //   title: 'Seraph Station',
   //   description: 'The Seraph Station project challenged us to design a unique station that would transport people through time. The result is a fresh and futuristic model inspired by space stations.',

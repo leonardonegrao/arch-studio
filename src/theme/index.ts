@@ -1,3 +1,9 @@
+const breakpoints = {
+  sm: '375px',
+  md: '660px',
+  lg: '1200px'
+}
+
 const colors = {
   veryDarkBlue: '#1b1d23',
   darkGrey: '#60636d',
@@ -42,6 +48,7 @@ export const typographyVariants = {
 const theme = {
   colors,
   typographyVariants,
+  breakpoints
 }
 
 export default theme

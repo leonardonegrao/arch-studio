@@ -9,11 +9,11 @@ export const CarouselWrapper = styled.div`
 
   width: 100%;
 
-  @media (min-width: 660px) {
-    max-width: 573px;
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    width: 573px;
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     display: block;
 
     position: relative;
@@ -21,16 +21,38 @@ export const CarouselWrapper = styled.div`
   }
 `
 
+export const CarouselImageWrapper = styled.div`
+  width: 100%;
+  height: 720px;
+
+  img {
+    filter: brightness(70%);
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    width: 573px;
+
+    img {
+      width: 100%;
+      height: 720px;
+    }
+  }
+  
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    width: 1110px;
+  }
+`
+
 export const CarouselItemInfo = styled.div`
+  position: absolute;
   z-index: 1;
   max-width: 311px;
 
-  @media (min-width: 660px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     max-width: 457px;
   }
 
-  @media (min-width: 1200px) {
-    position: absolute;
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     top: 180px;
     left: 190px;
 
@@ -44,6 +66,7 @@ export const CarouselOptionsSelector = styled.div`
 
   bottom: 0px;
   left: -80px;
+  z-index: 10;
 
   ${ButtonWrapper} {
     background: #fff;
@@ -61,24 +84,7 @@ export const CarouselOptionsSelector = styled.div`
     }
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     display: none;
-  }
-`
-
-export const CarouselImageWrapper = styled.div`
-  width: 100%;
-  height: 720px;
-
-  .carousel-background {
-    filter: brightness(70%);
-  }
-
-  @media (min-width: 660px) {
-    width: 573px;
-  }
-  
-  @media (min-width: 1200px) {
-    width: 1110px;
   }
 `

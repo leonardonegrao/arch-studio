@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import Header from './Header'
 import Footer from './Footer'
 
-import { LayoutWrapper, PageMarker, PageContent } from './styles'
+import { LayoutWrapper, PageMarker, PageContent, HeaderMarkerWrapper } from './styles'
 
 import { getPageName } from '../../lib/paths'
 
@@ -24,8 +24,10 @@ export default function Layout({ children }) {
         </PageMarker>
       </motion.div>
       <PageContent>
-        <Header />
-        {children}
+        <HeaderMarkerWrapper>
+          <Header />
+          {children}
+        </HeaderMarkerWrapper>
         <Footer />
       </PageContent>
     </LayoutWrapper>
