@@ -1,39 +1,39 @@
 import styled from 'styled-components'
 
 export const FooterContainer = styled.footer`
-display: flex;
-position: relative;
-
-max-width: 1110px;
-
-margin-top: 200px;
-
-.logo-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
 
-  height: 200px;
-  width: 200px;
+  max-width: 1110px;
 
-  background: ${({ theme }) => theme.colors.veryDarkBlue};
-}
+  margin-top: 200px;
 
-.menu-wrapper {
-  display: flex;
-  align-items: center;
+  .logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  padding-left: 56px;
+    height: 200px;
+    width: 200px;
 
-  background: ${({ theme }) => theme.colors.veryLightGrey};
-  min-width: 784px;
-}
+    background: ${({ theme }) => theme.colors.veryDarkBlue};
+  }
 
-.button-wrapper {
-  position: absolute;
-  top: 64px;
-  right: 0;
-}
+  .menu-wrapper {
+    display: flex;
+    align-items: center;
+
+    padding-left: 56px;
+
+    background: ${({ theme }) => theme.colors.veryLightGrey};
+    min-width: 784px;
+  }
+
+  .button-wrapper {
+    position: absolute;
+    top: 64px;
+    right: 0;
+  }
 `
 
 export const MenuOption = styled.div`
