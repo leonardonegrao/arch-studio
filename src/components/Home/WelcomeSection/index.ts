@@ -25,7 +25,7 @@ export const WelcomeSection = styled.section`
 
     @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
       h2 {
-        font-size: ${({ theme }) => theme.typographyVariants.headingOneLarge.fontSize};
+        font-size: ${({ theme }) => theme.typographyVariants.heading1Large.fontSize};
       }
     }
   }
@@ -46,9 +46,11 @@ export const WelcomeSection = styled.section`
     @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
       justify-content: flex-end;
     }
-  }
 
-  .image-welcome {
-    display: none;
+    @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+      .image-welcome {
+        display: none;
+      }
+    }
   }
 `

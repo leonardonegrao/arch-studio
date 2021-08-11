@@ -15,25 +15,25 @@ const colors = {
 }
 
 export const typographyVariants = {
-  headingOneLarge: {
+  heading1Large: {
     fontSize: '200px',
     lineHeight: '200px',
     letterSpacing: '-5px',
     fontWeight: '700',
   },
-  headingOneSmall: {
+  heading1Small: {
     fontSize: '80px',
     lineHeight: '80px',
     letterSpacing: '-2px',
     fontWeight: '700',
   },
-  headingTwo: {
+  heading2: {
     fontSize: '56px',
     lineHeight: '56px',
     letterSpacing: '-2px',
     fontWeight: '700',
   },
-  headingThree: {
+  heading3: {
     fontSize: '18px',
     lineHeight: '25px',
     fontWeight: '700',

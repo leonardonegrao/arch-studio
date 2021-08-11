@@ -24,18 +24,10 @@ export const CarouselWrapper = styled.div`
 export const CarouselImageWrapper = styled.div`
   width: 100%;
   height: 720px;
-
-  img {
-    filter: brightness(70%);
-  }
+  filter: brightness(70%);
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     width: 573px;
-
-    img {
-      width: 100%;
-      height: 720px;
-    }
   }
   
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
