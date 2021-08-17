@@ -1,5 +1,12 @@
 {
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
   "extends": [
+    "eslint:recommended",
+    "plugin:jsx-a11y/recommended",
     "plugin:@next/next/recommended"
   ],
   "plugins": [
@@ -53,7 +60,8 @@
           "ignoreCase": true
         }
       }
-    ]
+    ],
+    "no-undef": "off"
   },
   "parser": "@typescript-eslint/parser"
 }
