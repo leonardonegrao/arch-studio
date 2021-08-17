@@ -19,13 +19,12 @@
     "typescript": "^4.3.5"
   },
   "devDependencies": {
+    "@next/eslint-plugin-next": "^11.1.0",
     "@types/styled-components": "^5.1.11",
-    "@typescript-eslint/eslint-plugin": "^4.29.2",
-    "babel-plugin-styled-components": "^1.12.0",
+    "@typescript-eslint/parser": "^4.29.2",
     "eslint": "^7.32.0",
-    "eslint-config-next": "^11.0.1",
-    "eslint-config-prettier": "^8.3.0",
-    "prettier": "^2.3.2"
+    "eslint-config-next": "^11.1.0",
+    "eslint-plugin-import-helpers": "^1.1.0"
   },
   "license": "MIT"
 }

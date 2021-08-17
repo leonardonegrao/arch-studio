@@ -1,13 +1,59 @@
 {
-  "plugins": ["@typescript-eslint"],
   "extends": [
-    "next", 
-    "next/core-web-vitals",
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
+    "plugin:@next/next/recommended"
+  ],
+  "plugins": [
+    "eslint-plugin-import-helpers"
   ],
   "rules": {
-    "@typescript-eslint/no-unused-vars": "error",
-    "@typescript-eslint/no-explicit-any": "error"
-  }
+    "jsx-quotes": [
+      "error",
+      "prefer-double"
+    ],
+    "indent": [
+      "error",
+      2
+    ],
+    "no-console": [
+      "warn",
+      {
+        "allow": [
+          "warn",
+          "error"
+        ]
+      }
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "prefer-const": "warn",
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          "module",
+          [
+            "parent",
+            "sibling",
+            "index"
+          ],
+          "/^@components/",
+          "/^@utils/",
+          "/^@theme/",
+          "/^@public/"
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "ignoreCase": true
+        }
+      }
+    ]
+  },
+  "parser": "@typescript-eslint/parser"
 }
