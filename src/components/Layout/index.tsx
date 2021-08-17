@@ -1,15 +1,17 @@
-import { useRouter } from 'next/router'
-import { motion } from 'framer-motion'
+import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
 
-import Header from './Header'
-import Footer from './Footer'
+import Header from './Header';
+import Footer from './Footer';
 
-import { LayoutWrapper, PageMarker, PageContent, HeaderMarkerWrapper } from './styles'
+import {
+  LayoutWrapper, PageMarker, PageContent, HeaderMarkerWrapper,
+} from './styles';
 
-import { getPageName } from '../../lib/paths'
+import { getPageName } from '../../lib/paths';
 
 export default function Layout({ children }) {
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <LayoutWrapper>
@@ -31,5 +33,5 @@ export default function Layout({ children }) {
         <Footer />
       </PageContent>
     </LayoutWrapper>
-  )
+  );
 }

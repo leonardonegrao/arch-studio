@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const FooterContainer = styled.footer`
   display: flex;
@@ -34,7 +34,7 @@ export const FooterContainer = styled.footer`
     top: 64px;
     right: 0;
   }
-`
+`;
 
 export const MenuOption = styled.div`
   display: flex;
@@ -57,7 +57,7 @@ export const MenuOption = styled.div`
     transition: color .3s ease-in-out;
 
     &:hover {
-      color: ${({ theme }) => theme.colors.veryDarkBlue };
+      color: ${({ theme }) => theme.colors.veryDarkBlue};
     }
   }
-`
+`;

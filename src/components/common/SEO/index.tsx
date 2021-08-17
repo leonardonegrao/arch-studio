@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from 'next/head';
 
 interface seoProps {
   title: string
@@ -6,8 +6,6 @@ interface seoProps {
 }
 
 export default function SEO({ title, description }: seoProps) {
-  
-  
   return (
     <Head>
       <title>{title}</title>
@@ -28,5 +26,5 @@ export default function SEO({ title, description }: seoProps) {
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content={image} /> */}
     </Head>
-  )
+  );
 }

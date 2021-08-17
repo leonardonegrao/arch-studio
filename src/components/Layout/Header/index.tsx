@@ -1,9 +1,9 @@
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-import Logo from '../../../theme/Logo'
+import Logo from '../../../theme/Logo';
 
-import { Header, HeaderMenu, MenuOption } from './styles'
+import { Header, HeaderMenu, MenuOption } from './styles';
 
 function MenuOptionUnderscore({ isVisible }: { isVisible: boolean }) {
   return (
@@ -13,14 +13,14 @@ function MenuOptionUnderscore({ isVisible }: { isVisible: boolean }) {
         background: '#1B1D23',
         height: '1px',
         width: '24px',
-        marginTop: '8px'
+        marginTop: '8px',
       }}
     />
-  )
+  );
 }
 
 export default function Home() {
-  const routerPathName = useRouter().pathname
+  const routerPathName = useRouter().pathname;
 
   return (
     <Header>
@@ -37,7 +37,7 @@ export default function Home() {
           </Link>
           <MenuOptionUnderscore isVisible={routerPathName === '/portfolio'} />
         </MenuOption>
-        
+
         <MenuOption>
           <Link href="/about-us">
             <a>About Us</a>
@@ -53,5 +53,5 @@ export default function Home() {
         </MenuOption>
       </HeaderMenu>
     </Header>
-  )
+  );
 }

@@ -1,6 +1,6 @@
-import styled, { css } from "styled-components"
+import styled, { css } from 'styled-components';
 
-import ArrowIcon from '../icons/ArrowIcon'
+import ArrowIcon from '../icons/ArrowIcon';
 
 interface PropsButtonWrapper {
   variant: 'default' | 'square'
@@ -13,12 +13,12 @@ const ButtonDefault = css`
   svg {
     margin-left: 24px;
   }
-`
+`;
 
 const ButtonSquare = css`
   height: 80px;
   width: 80px;
-`
+`;
 
 export const ButtonWrapper = styled.button<PropsButtonWrapper>`
   display: flex;
@@ -46,13 +46,15 @@ export const ButtonWrapper = styled.button<PropsButtonWrapper>`
   &:active {
     background: ${({ theme }) => theme.colors.lightGrey};
   }
-`
+`;
 
-export default function Button({ variant, children = null, showArrow = true, ...props }) {
+export default function Button({
+  variant, children = null, showArrow = true, ...props
+}) {
   return (
     <ButtonWrapper variant={variant} {...props}>
-        {children && children}
-        {showArrow && <ArrowIcon color="#fff" />}
+      {children && children}
+      {showArrow && <ArrowIcon color="#fff" />}
     </ButtonWrapper>
-  )
+  );
 }

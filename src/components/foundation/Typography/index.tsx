@@ -1,5 +1,4 @@
-import React from 'react'
-import styled, { css } from 'styled-components'
+import styled, { css } from 'styled-components';
 
 interface TextProps {
   tag?: React.ElementType
@@ -8,14 +7,12 @@ interface TextProps {
   children: React.ReactNode
 }
 
-export const TypographyVariantsMap = (variant: any) => {
-  return css`
+export const TypographyVariantsMap = (variant: any) => css`
     font-size: ${({ theme }) => theme.typographyVariants[variant].fontSize};
     line-height: ${({ theme }) => theme.typographyVariants[variant].lineHeight};
     letter-spacing: ${({ theme }) => theme.typographyVariants[variant].letterSpacing};
     font-weight: ${({ theme }) => theme.typographyVariants[variant].fontWeight};
-  `
-};
+  `;
 
 interface BaseTypographyProps {
   variant: string
@@ -28,9 +25,11 @@ const BaseTypography = styled.span<BaseTypographyProps>`
   color: ${({ theme, color }) => theme.colors[color]};
 
   margin: 0;
-`
+`;
 
-export default function Typography({ tag = 'span', variant, color, children, ...props }: TextProps) {
+export default function Typography({
+  tag = 'span', variant, color, children, ...props
+}: TextProps) {
   return (
     <BaseTypography
       variant={variant}
@@ -40,5 +39,5 @@ export default function Typography({ tag = 'span', variant, color, children, ...
     >
       {children}
     </BaseTypography>
-  )
+  );
 }

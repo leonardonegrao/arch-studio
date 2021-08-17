@@ -1,10 +1,7 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const AboutUsContainer = styled.div`
   position: relative;
-
-  // width:
-  // height:
 
   .content {
     position: absolute;
@@ -42,4 +39,4 @@ export const AboutUsContainer = styled.div`
     width: 1110px;
     height: 560px;
   }
-`
+`;

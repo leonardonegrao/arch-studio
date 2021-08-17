@@ -1,9 +1,9 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
-import Logo from '../../../theme/Logo'
-import Button from '../../common/Button'
+import Logo from '../../../theme/Logo';
+import Button from '../../common/Button';
 
-import { FooterContainer, MenuOption } from './styles'
+import { FooterContainer, MenuOption } from './styles';
 
 export default function Footer() {
   return (
@@ -18,7 +18,7 @@ export default function Footer() {
             <a>Portfolio</a>
           </Link>
         </MenuOption>
-        
+
         <MenuOption>
           <Link href="/about-us">
             <a>About Us</a>
@@ -31,10 +31,10 @@ export default function Footer() {
           </Link>
         </MenuOption>
       </div>
-    
+
       <div className="button-wrapper">
         <Button variant="default">See our portfolio</Button>
       </div>
     </FooterContainer>
-  )
+  );
 }

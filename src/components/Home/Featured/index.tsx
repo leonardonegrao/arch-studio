@@ -1,13 +1,13 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from 'next/image';
+import Link from 'next/link';
 
-import Typography from '../../foundation/Typography'
-import Button from '../../common/Button'
-import { FeaturedProject, FeaturedProjectsWrapper } from './style'
+import Typography from '../../foundation/Typography';
+import Button from '../../common/Button';
+import { FeaturedProject, FeaturedProjectsWrapper } from './style';
 
-import imgDelSol from '../../../../public/assets/portfolio/desktop/image-del-sol.jpg'
-import img228b from '../../../../public/assets/portfolio/desktop/image-228b.jpg'
-import imgPrototype from '../../../../public/assets/portfolio/desktop/image-prototype.jpg'
+import imgDelSol from '../../../../public/assets/portfolio/desktop/image-del-sol.jpg';
+import img228b from '../../../../public/assets/portfolio/desktop/image-228b.jpg';
+import imgPrototype from '../../../../public/assets/portfolio/desktop/image-prototype.jpg';
 
 export default function Featured() {
   return (
@@ -18,7 +18,7 @@ export default function Featured() {
           justifyContent: 'space-between',
           alignItems: 'center',
           marginTop: '200px',
-          marginBottom: '64px'
+          marginBottom: '64px',
         }}
       >
         <Typography variant="heading2" tag="h2" color="veryDarkBlue">Featured</Typography>
@@ -84,5 +84,5 @@ export default function Featured() {
         </FeaturedProject>
       </FeaturedProjectsWrapper>
     </>
-  )
+  );
 }

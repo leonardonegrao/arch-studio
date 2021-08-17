@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const PortfolioListWrapper = styled.main`
   display: flex;
@@ -9,4 +9,4 @@ export const PortfolioListWrapper = styled.main`
   > article {
     margin-bottom: 30px;
   }
-`
+`;

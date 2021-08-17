@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-import { ButtonWrapper } from '../../common/Button'
+import { ButtonWrapper } from '../../common/Button';
 
 export const CarouselWrapper = styled.div`
   display: flex;
@@ -19,7 +19,7 @@ export const CarouselWrapper = styled.div`
     position: relative;
     width: 1110px;
   }
-`
+`;
 
 export const CarouselImageWrapper = styled.div`
   width: 100%;
@@ -33,7 +33,7 @@ export const CarouselImageWrapper = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     width: 1110px;
   }
-`
+`;
 
 export const CarouselItemInfo = styled.div`
   position: absolute;
@@ -50,7 +50,7 @@ export const CarouselItemInfo = styled.div`
 
     max-width: 544px;
   }
-`
+`;
 
 export const CarouselOptionsSelector = styled.div`
   position: absolute;
@@ -79,4 +79,4 @@ export const CarouselOptionsSelector = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     display: none;
   }
-`
+`;

@@ -1,17 +1,17 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Header = styled.header`
   display: flex;
   align-items: bottom;
 
   padding: 56px 0;
-`
+`;
 
 export const HeaderMenu = styled.nav`
   display: flex;
 
   margin-left: 94px;
-`
+`;
 
 export const MenuOption = styled.div`
   display: flex;
@@ -34,7 +34,7 @@ export const MenuOption = styled.div`
     transition: color .3s ease-in-out;
 
     &:hover {
-      color: ${({ theme }) => theme.colors.veryDarkBlue };
+      color: ${({ theme }) => theme.colors.veryDarkBlue};
     }
   }
-`
+`;

@@ -13,3 +13,5 @@ Para dispositivos móveis com telas grandes, maiores que `660px`, como tablets. 
 ### lg: 1200px
 
 Para dispositivos com telas grandes, de notebooks à monitores ultrawide. Deve ser definido com media query.
+
+## API Reference
