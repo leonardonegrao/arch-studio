@@ -7,6 +7,7 @@
 /coverage
 
 # next.js
+/public
 /.next/
 /out/
 

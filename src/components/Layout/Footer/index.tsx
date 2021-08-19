@@ -2,7 +2,6 @@ import Link from 'next/link';
 
 import Logo from '../../../theme/Logo';
 import Button from '../../common/Button';
-
 import { FooterContainer, MenuOption } from './styles';
 
 export default function Footer() {

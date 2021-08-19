@@ -1,14 +1,12 @@
-import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/router';
 
-import Header from './Header';
+import { getPageName } from '../../lib/paths';
 import Footer from './Footer';
-
+import Header from './Header';
 import {
   LayoutWrapper, PageMarker, PageContent, HeaderMarkerWrapper,
 } from './styles';
-
-import { getPageName } from '../../lib/paths';
 
 export default function Layout({ children }) {
   const router = useRouter();

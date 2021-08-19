@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import Logo from '../../../theme/Logo';
-
 import { Header, HeaderMenu, MenuOption } from './styles';
 
 function MenuOptionUnderscore({ isVisible }: { isVisible: boolean }) {

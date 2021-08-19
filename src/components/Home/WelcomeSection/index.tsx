@@ -1,14 +1,12 @@
+import Typography from '@/components/foundation/Typography';
+import imageWelcome from '~public/assets/home/desktop/image-welcome.jpg';
 import Image from 'next/image';
 
-import Typography from '@/components/foundation/Typography';
 
 import { WelcomeSectionWrapper } from './styles';
 
-import imageWelcome from '~public/assets/home/desktop/image-welcome.jpg';
 
 export default function WelcomeSection(): JSX.Element {
-  const test = "test"
-
   return (
     <WelcomeSectionWrapper>
       <div className="welcome-floating-message-wrapper">

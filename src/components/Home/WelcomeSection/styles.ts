@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const WelcomeSectionWrapper = styled.section`
   position: relative;
@@ -54,4 +54,4 @@ export const WelcomeSectionWrapper = styled.section`
       }
     }
   }
-`
+`;
