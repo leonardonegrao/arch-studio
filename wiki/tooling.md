@@ -37,18 +37,18 @@ The code style pattern is guaranteed by **ESLint**, together with several extend
 
 - **Editor Config**: Used by the `.editorconfig` file, guarantees that the text editor in which the project is open mantains compatibility with the code style patterns.
 
-Para criar essa configuração do zero, é preciso primeiro rodar o comando:
+To create these settings, first it's required to run:
 
 ```bash
 yarn add -D eslint eslint-config-next @next/eslint-plugin-next
 # npm install --save-dev eslint eslint-config-next @next/eslint-plugin-next
 ```
 
-Depois disso, é necessário rodar `yarn lint` para criar o arquivo de configuração pelo próprio script fornecido pelo Next.
+After that, it's needed to run `yarn lint` to create the configuration file using Next's own script.
 
-As configurações adicionais, são:
+The additional configurations are:
 
-- Adicionar os ambientes de desenvolvimento. No caso do Next.js, as APIs do browser, do React e do Node são todas acessíveis.
+- Add the development environments. In Next's case, the APIs from the browsers, React and Node are all accessible.
 
 ```json
 "env": {
@@ -58,7 +58,7 @@ As configurações adicionais, são:
 },
 ```
 
-- Para alterar as regras de plugins que a própria configuração do Next.js importa, a documentação recomenda extendê-los, como também extender o `"plugin:@next/next/recommended"`. Assim, o plugin é da configuração é usado no lugar da própria configuração. Segundo a documentação, isso é feito para não gerar conflitos.
+- To change the rules from plugins that Next's very own package uses, the docs recommend to extend them, as well as extend the `"plugin:@next/next/recommended"`. Doing so, the plugin is used insted of the default package. As explained in the docs, this is done to avoid conflicts.
 
 ```json
 "extends": [
@@ -70,7 +70,7 @@ As configurações adicionais, são:
 ],
 ```
 
-- Nos plugins, o `eslint-plugin-import-helpers` é usado para ajudar a organizar os imports.
+- In the `plugins`, the `eslint-plugin-import-helpers` is used to help organize the imports.
 
 ```json
 "plugins": [
@@ -78,23 +78,23 @@ As configurações adicionais, são:
 ],
 ```
 
-- O parser ajuda o `eslint-plugin-import-helpers` a trabalhar com o TypeScript.
+- The parser helps `eslint-plugin-import-helpers` to work with TypeScript.
 
 ```json
 "parser": "@typescript-eslint/parser",
 ```
 
-### Regras
+### Rules
 ---
-As seguintes regras foram incluídas no projeto:
+The following rules were included for this project:
 
-- **"react/react-in-jsx-scope"**: Desligada, já que por padrão o Next.js não exige a importação do React.
+- **"react/react-in-jsx-scope"**: Off, following how Next works by default.
 
 ```json
 "react/react-in-jsx-scope": "off",
 ```
 
-- **"jsx-quotes"**: Definido como aspas duplas para seguir o padrão comum com HTML.
+- **"jsx-quotes"**: Defined to require double quotes to follow the HTML common use.
 
 ```json
 "jsx-quotes": [
@@ -103,7 +103,7 @@ As seguintes regras foram incluídas no projeto:
 ],
 ```
 
-- **"indent"**: Definido como 2 espaços, para seguir o padrão também definido no `.editorconfig`.
+- **"indent"**: Defined as 2 spaces, following the standard that was also defined in `.editorconfig`.
 
 ```json
 "indent": [
@@ -112,7 +112,7 @@ As seguintes regras foram incluídas no projeto:
 ],
 ```
 
-- **"no-console"**: Consoles de erro e alerta são permitidos para identificar erros, e outros são `warns` para que seja possível usar como ferramenta de debug.
+- **"no-console"**: Error and warning logs are allowed, to identify errors and other `warns`. Doing so facilitate the debbuging process while on development.
 
 ```json
 "no-console": [
@@ -126,7 +126,7 @@ As seguintes regras foram incluídas no projeto:
 ],
 ```
 
-- **"semi"**: Exige `;` sempre que possível.
+- **"semi"**: Requires `;` as much as possible.
 
 ```json
 "semi": [
@@ -135,7 +135,7 @@ As seguintes regras foram incluídas no projeto:
 ],
 ```
 
-- **"quotes"**: As aspas definidas são as simples (`'`) para strings.
+- **"quotes"**: The single quotes (`'`) are defined to encapsulate strings.
 
 ```json
 "quotes": [
@@ -144,7 +144,7 @@ As seguintes regras foram incluídas no projeto:
 ],
 ```
 
-- **"import-helpers/order-imports"**: Essa regra define a estrutura de importações. Os grupos definem como serão agrupadas as importações, dependendo do seu caminho.
+- **"import-helpers/order-imports"**: This rule defines the imports structure. The groups define how the imports are going to be grouped, depending on the relative path or absolute path.
 
 ```json
 "import-helpers/order-imports": [
@@ -171,30 +171,30 @@ As seguintes regras foram incluídas no projeto:
 ],
 ```
 
-- **"no-undef"**: Desabilitada pois o TypeScript possui sua própria verificação.
+- **"no-undef"**: Disabled because TypeScript has this behavior already.
 
 ```json
 "no-undef": "off"
 ```
 
-## Husky, Commitlint e Commitizen
+## Husky, Commitlint and Commitizen
 ---
 
-Para configuração de commits, foi usado o Husky para usar o conceito de _hooks_, com ele é possível capturar eventos do projeto como `pre-push` e `commit`.
+Husky is used to lint commits. With Husky it's possible to take advantage of the _hooks_ concept and capture events such as `push` and `commit`.
 
-Nesses cenários, o Husky pode executar comandos. Os comandos aqui servem para garantir a integridade do projeto, e do seu versionamento.
+In these scenarios, Husky can execute commands. The purpose of the commands being used here is to ensure the project's intregrity and the integrity of its versioning.
 
 ### Husky
 ---
 
-O primeiro passo é instalar o Husky:
+The first step is to install Husky:
 
 ```bash
 yarn add --dev husky
 # npm install --save-dev husky
 ```
 
-Com isso feito, e o processo de _linting_ já configurado, é possível adicionar um _hook_ para o cenário `pre-push` (antes de executar um `git push`). É necessário adicionar o seguinte conteúdo no `package.json`:
+With that done, and the process of _linting_ correctly configured, it's possible to add a _hook_ to the `pre-push` event (before the execution of a `git push`). It is necessary to add the following code on `package.json`:
 
 ```json
 // package.json
@@ -204,57 +204,57 @@ Com isso feito, e o processo de _linting_ já configurado, é possível adiciona
 },
 ```
 
-O que significa que quando o _hook_ de `pre-push` for acionado, será executado `yarn lint`, para garantir que não está sendo subido nenhum código com problemas de _linting_.
+That means that when the `pre-push` _hook_ be triggered, `yarn lint` will be executed to ensure that no code that's not following the linting rules is being pushed.
 
-### Padrão de commit
+### Commit pattern
 ---
 
-O padrão de commit é configurado usando várias ferramentas, sendo elas:
+The commit pattern is configured using a couple of tools:
 
 - Husky
 - Commitlint
 - Commitizen
-- Padrão Conventional Commits
+- Conventional Commits pattern
 
-É necessário ter o Commitizen instalado globalmente na máquina:
+It's required to have Commitizen installed globally on the machine:
 
 ```bash
 npm install -g commitizen
 ```
 
-O Commitizen espera que o repositório defina seu padrão de commit, permitidindo flexibilidade. Para configurar o padrão Conventional Commits, é preciso rodar:
+Commitizen expects the repository to define its own commit pattern, that allows flexibility between projects. To setup the Conventional Commits pattern, it's needed to run:
 
 ```bash
 commitizen init cz-conventional-changelog --yarn --dev --exact
 ```
 
-Uma vez isso feito, uma configuração adicional será criada no `package.json`.
+Once that's done, an additional property will be created inside the `package.json` file.
 
-Para facilitar o fluxo de desenvolvimento, é indicado criar um `script`:
+To facilitate the development flow, it's indicated to create a `script`:
 
 ```json
 "commit": "cz"
 ```
 
-Por fim, é necessário configurar o _linting_ dos commits. É preciso instalar os pacotes `@commitlint/cli` e `@commitlint/config-conventional`:
+Finally, it's time to setup the linting of the commits, with the installation of the packages `@commitlint/cli` and `@commitlint/config-conventional`:
 
 ```bash
 yarn add --dev @commitlint/cli @commitlint/config-conventional
 # npm install --save-dev @commitlint/cli @commitlint/config-conventional
 ```
 
-O comando abaixo cria um arquivo de configuração:
+The following command creates an configuration file:
 
 ```bash
 echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js
 ```
 
-E com o lado do Commitlint configurado, é necessário apenas configurar o _hook_ no Husky:
+And with Commitlint setup, the only thing left is to configure the hook from Husky:
 
-```bash
+```json
 "husky": {
   "pre-push": "yarn lint",
-  "commit-msg": "commitlint -E HUSKY_GIT_PARAMS" # linha adicionada
+  "commit-msg": "commitlint -E HUSKY_GIT_PARAMS" # new line
 },
 ```
 
