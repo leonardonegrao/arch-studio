@@ -1,9 +1,10 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import Typography from '../components/foundation/Typography'
-import { PortfolioListWrapper } from '../components/Portfolio/PortfolioList'
-import { FeaturedProject } from '../components/Home/Featured/style'
-import { projectList } from '../projects'
+import Image from 'next/image';
+import Link from 'next/link';
+
+import Typography from '../components/foundation/Typography';
+import { FeaturedProject } from '../components/Home/Featured/style';
+import { PortfolioListWrapper } from '../components/Portfolio/PortfolioList';
+import { projectList } from '../projects';
 
 export default function Portfolio() {
   return (
@@ -26,5 +27,5 @@ export default function Portfolio() {
         </FeaturedProject>
       ))}
     </PortfolioListWrapper>
-  )
+  );
 } 

@@ -1,9 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
-import { GlobalStyle } from '../theme/GlobalStyle';
-import theme from '../theme';
+
 import Layout from '../components/Layout';
+import theme from '../theme';
+import { GlobalStyle } from '../theme/GlobalStyle';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

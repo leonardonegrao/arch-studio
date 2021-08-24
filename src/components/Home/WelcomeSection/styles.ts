@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const WelcomeSection = styled.section`
+export const WelcomeSectionWrapper = styled.section`
   position: relative;
 
   height: 668px;
@@ -25,7 +25,8 @@ export const WelcomeSection = styled.section`
 
     @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
       h2 {
-        font-size: ${({ theme }) => theme.typographyVariants.heading1Large.fontSize};
+        font-size: ${({ theme }) =>
+    theme.typographyVariants.heading1Large.fontSize};
       }
     }
   }
