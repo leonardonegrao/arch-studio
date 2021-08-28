@@ -17,12 +17,12 @@ interface QueryResponse {
 }
 
 export function CMSClient(): CMSClientResponse {
-  // const TOKEN = process.env.DATOCMS_API_TOKEN;
+  const TOKEN = process.env.DATOCMS_API_TOKEN;
   const endpoint = 'https://graphql.datocms.com';
 
   const client = new GraphQLClient(endpoint, {
     headers: {
-      authorization: 'Bearer 0f6317d586a9529d973ac1b2bff65c'
+      authorization: `Bearer ${TOKEN}`
     },
   });
 
