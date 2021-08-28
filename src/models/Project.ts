@@ -1,0 +1,18 @@
+interface ProjectImage {
+  id: string;
+  url: string;
+  alt: string;
+  customData: {
+    type: 'desktop' | 'mobile' | 'tablet';
+  };
+}
+
+interface Project {
+  id: string;
+  title: string;
+  description?: string;
+  slug: string;
+  images: ProjectImage[];
+}
+
+export default Project;

@@ -1,12 +1,10 @@
-import Image from 'next/image';
-import Link from 'next/link';
+//import Image from 'next/image';
+//import Link from 'next/link';
 
-import img228b from '../../../../public/assets/portfolio/desktop/image-228b.jpg';
-import imgDelSol from '../../../../public/assets/portfolio/desktop/image-del-sol.jpg';
-import imgPrototype from '../../../../public/assets/portfolio/desktop/image-prototype.jpg';
 import Button from '../../common/Button';
 import Typography from '../../foundation/Typography';
-import { FeaturedProject, FeaturedProjectsWrapper } from './style';
+import { FeaturedProjectsWrapper } from './style';
+//import { FeaturedProject, FeaturedProjectsWrapper } from './style';
 
 export default function Featured() {
   return (
@@ -24,7 +22,7 @@ export default function Featured() {
         <Button variant="default">See All</Button>
       </div>
       <FeaturedProjectsWrapper>
-        <FeaturedProject>
+        {/* <FeaturedProject>
           <div className="number-wrapper" style={{ opacity: 0.5 }}>
             <Typography variant="heading1Large" tag="h2" color="white">1</Typography>
           </div>
@@ -80,7 +78,7 @@ export default function Featured() {
             alt="Image of Project Del Sol"
             layout="fill"
           />
-        </FeaturedProject>
+        </FeaturedProject> */}
       </FeaturedProjectsWrapper>
     </>
   );

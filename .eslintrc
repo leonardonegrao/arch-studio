@@ -54,6 +54,7 @@
             "index"
           ],
           "/^@components/",
+          "/^@models/",
           "/^@utils/",
           "/^@theme/",
           "/^@public/"

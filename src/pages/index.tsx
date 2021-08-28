@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion';
+import { GetStaticProps } from 'next';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import { CMSClient } from 'src/infra/cms/CMSClient';
 import styled from 'styled-components';
 
 import Button from '@components/common/Button';
@@ -7,8 +10,11 @@ import SEO from '@components/common/SEO';
 import Typography from '@components/foundation/Typography';
 import { AboutUsContainer } from '@components/Home/AboutUsSection';
 import Carousel from '@components/Home/Carousel';
+import { QUERY } from '@components/Home/Carousel/carouselQuery';
 import Featured from '@components/Home/Featured';
 import WelcomeSection from '@components/Home/WelcomeSection';
+
+import Project from '@models/Project';
 
 import imageSmallTeam from '@public/assets/home/desktop/image-small-team.jpg';
 
@@ -16,7 +22,19 @@ const HomeMain = styled.main`
   width: 100%;
 `;
 
-export default function Home(): JSX.Element {
+interface HomeProps {
+  staticProjects: Project[];
+}
+
+export default function Home({ staticProjects }: HomeProps): JSX.Element {
+  const [carouselProjects, setCarouselProjects] = useState([]);
+
+  useEffect(() => {
+    if (staticProjects) {
+      setCarouselProjects(staticProjects);
+    }
+  }, [staticProjects]);
+
   return (
     <>
       <SEO title="Arch Studio" description="Small teams, big ideas" />
@@ -27,7 +45,7 @@ export default function Home(): JSX.Element {
           animate={{ opacity: 1 }}
           transition={{ ease: 'easeOut', duration: 1.2 }}
         >
-          <Carousel />
+          <Carousel items={carouselProjects} />
           <WelcomeSection />
 
           <AboutUsContainer>
@@ -46,10 +64,21 @@ export default function Home(): JSX.Element {
               className="about-us-background"
             />
           </AboutUsContainer>
-
           <Featured />
         </motion.div>
       </HomeMain>
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps<HomeProps> = async () => {
+  const client = CMSClient();
+  const { data } = await client.query({ query: QUERY, variables: {} });
+  const staticProjects = await data.response.allProjects;
+
+  return {
+    props: {
+      staticProjects,
+    },
+  };
+};
