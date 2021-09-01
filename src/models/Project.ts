@@ -1,9 +1,9 @@
-interface ProjectImage {
+export interface ProjectImage {
   id: string;
   url: string;
   alt: string;
   customData: {
-    type: 'desktop' | 'mobile' | 'tablet';
+    type: 'desktop' | 'mobile' | 'tablet' | 'hero-desktop' | 'hero-mobile' | 'hero-tablet';
   };
 }
 

@@ -1,8 +1,9 @@
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import Logo from '../../../theme/Logo';
 import { Header, HeaderMenu, MenuOption } from './styles';
+
+import Link from '@components/common/Link';
 
 function MenuOptionUnderscore({ isVisible }: { isVisible: boolean }) {
   return (
@@ -23,30 +24,28 @@ export default function Home() {
 
   return (
     <Header>
-      <Link href="/">
-        <a>
-          <Logo />
-        </a>
+      <Link href="/" passHref>
+        <Logo />
       </Link>
 
       <HeaderMenu>
         <MenuOption>
           <Link href="/portfolio">
-            <a>Portfolio</a>
+            Portfolio
           </Link>
           <MenuOptionUnderscore isVisible={routerPathName === '/portfolio'} />
         </MenuOption>
 
         <MenuOption>
           <Link href="/about-us">
-            <a>About Us</a>
+            About Us
           </Link>
           <MenuOptionUnderscore isVisible={routerPathName === '/about-us'} />
         </MenuOption>
 
         <MenuOption>
           <Link href="/contact">
-            <a>Contact</a>
+            Contact
           </Link>
           <MenuOptionUnderscore isVisible={routerPathName === '/contact'} />
         </MenuOption>

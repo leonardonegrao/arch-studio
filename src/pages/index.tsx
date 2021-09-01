@@ -27,7 +27,7 @@ interface HomeProps {
 }
 
 export default function Home({ staticProjects }: HomeProps): JSX.Element {
-  const [carouselProjects, setCarouselProjects] = useState([]);
+  const [carouselProjects, setCarouselProjects] = useState<Project[]>([]);
 
   useEffect(() => {
     if (staticProjects) {

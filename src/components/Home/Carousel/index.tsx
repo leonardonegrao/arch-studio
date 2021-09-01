@@ -12,7 +12,7 @@ import {
   CarouselItemInfo,
 } from './styles';
 
-import Project from '@models/Project';
+import Project, { ProjectImage } from '@models/Project';
 
 interface CarouselProps {
   items: Project[];
@@ -21,18 +21,44 @@ interface CarouselProps {
 export default function Carousel({ items }: CarouselProps) {
   const [carouselItems, setCarouselItems] = useState<Project[]>([]);
   const [activeItem, setActiveItem] = useState<Project>(null);
+  const [heroImage, setHeroImage] = useState<ProjectImage>(null);
 
   function handleActiveItemChange(index: number) {
     setActiveItem(carouselItems[index]);
   }
 
+  function checkIfValid(arrayOfProjects: Project[]) {
+    return arrayOfProjects.length > 0;
+  }
+
+  function getHeroImage(project: Project) {
+    const { images } = project;
+
+    return images.find((image) => image.customData.type === 'hero-desktop');
+  }
+
   useEffect(() => {
-    if (items) {
+    if (items.length > 0) {
       setCarouselItems(items);
 
       setActiveItem(carouselItems[0]); // first item is active by default
     }
   }, [items, carouselItems]);
+
+  useEffect(() => {
+    if (activeItem) {
+      const image = getHeroImage(activeItem);
+
+      setHeroImage(image);
+    }
+  }, [activeItem]);
+
+  if (!checkIfValid(carouselItems)) {
+    return (
+      <CarouselWrapper>
+      </CarouselWrapper>
+    );
+  }
 
   return (
     <CarouselWrapper>
@@ -55,10 +81,10 @@ export default function Carousel({ items }: CarouselProps) {
         </div>
       </CarouselItemInfo>
       <CarouselImageWrapper>
-        {activeItem && (
+        {heroImage && (
           <Image
-            src={activeItem.images[0].url}
-            alt={activeItem.images[0].alt}
+            src={heroImage.url}
+            alt={heroImage.alt}
             layout="fill"
           />
         )}
