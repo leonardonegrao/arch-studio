@@ -6,7 +6,7 @@
     "build": "next build",
     "start": "next start",
     "lint:next": "next lint",
-    "lint": "eslint --debug .",
+    "lint": "eslint .",
     "commit": "cz"
   },
   "dependencies": {

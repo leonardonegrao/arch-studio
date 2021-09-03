@@ -46,7 +46,7 @@ export default function Featured({ featuredProjects }: FeaturedProps) {
             </div>
             <Image
               src={findImage(project).url}
-              alt="Image of Project Del Sol"
+              alt={findImage(project).alt}
               layout="fill"
             />
           </FeaturedProject>
