@@ -1,5 +1,5 @@
-const QUERY = `query {
-  allProjects(filter: { carousel: { eq: true } }) {
+export default `query {
+  allProjects() {
     id,
     title,
     description,
@@ -14,5 +14,3 @@ const QUERY = `query {
     carousel
   }
 }`;
-
-export { QUERY };

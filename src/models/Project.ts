@@ -12,6 +12,7 @@ interface Project {
   title: string;
   description?: string;
   slug: string;
+  carousel: boolean;
   images: ProjectImage[];
 }
 

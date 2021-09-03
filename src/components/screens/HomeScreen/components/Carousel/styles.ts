@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { ButtonWrapper } from '../../common/Button';
+import { ButtonWrapper } from '@components/common/Button';
 
 export const CarouselWrapper = styled.div`
   display: flex;

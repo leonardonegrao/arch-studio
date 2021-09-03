@@ -3,14 +3,15 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
-import Button from '../../common/Button';
-import Typography from '../../foundation/Typography';
 import {
   CarouselWrapper,
   CarouselImageWrapper,
   CarouselOptionsSelector,
   CarouselItemInfo,
 } from './styles';
+
+import Button from '@components/common/Button';
+import Typography from '@components/foundation/Typography';
 
 import Project, { ProjectImage } from '@models/Project';
 

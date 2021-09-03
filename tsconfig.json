@@ -39,6 +39,9 @@
       ],
       "@models/*": [
         "./src/models/*"
+      ],
+      "@infra/*": [
+        "./src/infra/*"
       ]
     }
   },
