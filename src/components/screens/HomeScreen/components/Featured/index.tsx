@@ -1,9 +1,10 @@
 import Image from 'next/image';
 
-import { FeaturedProject, FeaturedProjectsWrapper } from './style';
+import { FeaturedProjectsWrapper } from './style';
 
 import Button from '@components/common/Button';
 import Link from '@components/common/Link';
+import ProjectComponent from '@components/common/Project';
 import Typography from '@components/foundation/Typography';
 
 import Project from '@models/Project';
@@ -33,7 +34,7 @@ export default function Featured({ featuredProjects }: FeaturedProps) {
       </div>
       <FeaturedProjectsWrapper>
         {featuredProjects && (featuredProjects.map((project, index) => (
-          <FeaturedProject key={project.id}>
+          <ProjectComponent key={project.id} isFeatured>
             <div className="number-wrapper" style={{ opacity: 0.5 }}>
               <Typography variant="heading1Large" tag="h2" color="white">{index + 1}</Typography>
             </div>
@@ -49,7 +50,7 @@ export default function Featured({ featuredProjects }: FeaturedProps) {
               alt={findImage(project).alt}
               layout="fill"
             />
-          </FeaturedProject>
+          </ProjectComponent>
         )))}
       </FeaturedProjectsWrapper>
     </>

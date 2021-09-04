@@ -16,16 +16,21 @@ interface PortfolioScreenProps {
 export default function PortfolioScreen({ projects }: PortfolioScreenProps) {
   const [featuredProjects, setFeaturedProjects] = useState([]);
 
-  function findImage(project: Project) {
+  function findMainImage(project: Project) {
     return project.images.find(image => image.customData.type === 'desktop');
   }
 
-  // map projects to view format
+  function handleDate(date: Date | string): string {
+    const dateObj = typeof date === 'string' ? new Date(date) : date;
+
+    return dateObj.toLocaleString('en-US', { month: 'long', year: 'numeric' });
+  }
+
   useEffect(() => {
     if (projects) {
       const formattedProjects = projects.map(project => {
-        const formattedDate = project.date.toLocaleString('en-US', { month: 'long', year: 'numeric' });
-        const mainImage = findImage(project);
+        const formattedDate = handleDate(project.date);
+        const mainImage = findMainImage(project);
 
         return {
           ...project,

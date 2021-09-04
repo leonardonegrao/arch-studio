@@ -1,16 +1,19 @@
-export default `query {
-  allProjects() {
-    id,
-    title,
+import { gql } from '../CMSClient';
+
+export default gql`
+query {
+  allProjects {
+    id
+    title
     description,
-    date,
-    slug,
+    date
+    slug
     images {
-      alt,
-      url,
-      id,
+      alt
+      url
+      id
       customData
-    },
+    }
     carousel
   }
 }`;

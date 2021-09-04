@@ -24,7 +24,7 @@ export default function Home() {
 
   return (
     <Header>
-      <Link href="/" passHref>
+      <Link href="/">
         <Logo />
       </Link>
 
