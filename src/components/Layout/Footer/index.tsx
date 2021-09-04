@@ -1,8 +1,8 @@
-import Link from 'next/link';
-
 import Logo from '../../../theme/Logo';
 import Button from '../../common/Button';
 import { FooterContainer, MenuOption } from './styles';
+
+import Link from '@components/common/Link';
 
 export default function Footer() {
   return (
@@ -14,19 +14,19 @@ export default function Footer() {
       <div className="menu-wrapper">
         <MenuOption>
           <Link href="/portfolio">
-            <a>Portfolio</a>
+            Portfolio
           </Link>
         </MenuOption>
 
         <MenuOption>
           <Link href="/about-us">
-            <a>About Us</a>
+            About Us
           </Link>
         </MenuOption>
 
         <MenuOption>
           <Link href="/contact">
-            <a>Contact</a>
+            Contact
           </Link>
         </MenuOption>
       </div>

@@ -1,10 +1,13 @@
-import Typography from '@/components/foundation/Typography';
-import imageWelcome from '~public/assets/home/desktop/image-welcome.jpg';
+
+
 import Image from 'next/image';
 
 
 import { WelcomeSectionWrapper } from './styles';
 
+import Typography from '@components/foundation/Typography';
+
+import imageWelcome from '@public/assets/home/desktop/image-welcome.jpg';
 
 export default function WelcomeSection(): JSX.Element {
   return (

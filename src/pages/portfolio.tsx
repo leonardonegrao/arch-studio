@@ -1,31 +1,28 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import { GetStaticProps } from 'next';
 
-import Typography from '../components/foundation/Typography';
-import { FeaturedProject } from '../components/Home/Featured/style';
-import { PortfolioListWrapper } from '../components/Portfolio/PortfolioList';
-import { projectList } from '../projects';
+import PortfolioScreen from '@components/screens/PortfolioScreen';
 
-export default function Portfolio() {
-  return (
-    <PortfolioListWrapper>
-      {projectList.map(project => (
-        <FeaturedProject key={project.slug}>
-          <div className="text-content-wrapper">
-            <Typography variant="heading3" tag="h3" color="white">Project Del Sol</Typography>
-            <Link href="/portfolio">
-              <a>
-                <Typography variant="body" tag="a" color="white">View All Projects</Typography>
-              </a>
-            </Link>
-          </div>
-          <Image
-            src={project.img}
-            alt="Image of Project Del Sol"
-            layout="fill"
-          />
-        </FeaturedProject>
-      ))}
-    </PortfolioListWrapper>
-  );
-} 
+import Project from '@models/Project';
+
+import { CMSClient } from '@infra/cms/CMSClient';
+import { getProjects } from '@infra/cms/queries';
+
+interface PortfolioProps {
+  staticProjects: Project[];
+}
+
+export default function Portfolio({ staticProjects }: PortfolioProps) {
+  return <PortfolioScreen projects={staticProjects} />;
+}
+
+export const getStaticProps: GetStaticProps<PortfolioProps> = async () => {
+  const client = CMSClient();
+  const { data } = await client.query({ query: getProjects, variables: {} });
+  const staticProjects = await data.response.allProjects;
+
+  return {
+    props: {
+      staticProjects,
+    },
+  };
+};

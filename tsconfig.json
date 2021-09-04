@@ -36,6 +36,12 @@
       ],
       "@public/*": [
         "./public/*"
+      ],
+      "@models/*": [
+        "./src/models/*"
+      ],
+      "@infra/*": [
+        "./src/infra/*"
       ]
     }
   },
