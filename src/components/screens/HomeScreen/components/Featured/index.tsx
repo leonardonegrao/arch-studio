@@ -42,7 +42,7 @@ export default function Featured({ featuredProjects }: FeaturedProps) {
             <div className="text-content-wrapper">
               <Typography variant="heading3" tag="h3" color="white">{project.title}</Typography>
               <Link href="/portfolio">
-                <Typography variant="body" tag="a" color="white">View All Projects</Typography>
+                <Typography variant="body" color="white">View All Projects</Typography>
               </Link>
             </div>
             <Image

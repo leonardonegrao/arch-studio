@@ -1,6 +1,9 @@
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 
-import Logo from '../../../theme/Logo';
+import Logo from '../../../../theme/Logo';
+import Burger from './components/Burger';
+import MobileMenu from './components/MobileMenu';
 import { Header, HeaderMenu, MenuOption } from './styles';
 
 import Link from '@components/common/Link';
@@ -21,6 +24,7 @@ function MenuOptionUnderscore({ isVisible }: { isVisible: boolean }) {
 
 export default function Home() {
   const routerPathName = useRouter().pathname;
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <Header>
@@ -50,6 +54,9 @@ export default function Home() {
           <MenuOptionUnderscore isVisible={routerPathName === '/contact'} />
         </MenuOption>
       </HeaderMenu>
+
+      <Burger open={isMenuOpen} setOpen={setIsMenuOpen} />
+      {isMenuOpen && <MobileMenu />}
     </Header>
   );
 }

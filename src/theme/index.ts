@@ -1,8 +1,10 @@
-const breakpoints = {
+import { DefaultTheme } from 'styled-components';
+
+export const breakpoints = {
   sm: '375px',
   md: '660px',
   lg: '1200px'
-}
+};
 
 const colors = {
   veryDarkBlue: '#1b1d23',
@@ -12,7 +14,7 @@ const colors = {
   veryLightGrey: '#eeeff4',
   red: '#df5656',
   white: '#fff'
-}
+};
 
 export const typographyVariants = {
   heading1Large: {
@@ -43,12 +45,12 @@ export const typographyVariants = {
     lineHeight: '25px',
     fontWeight: '500',
   }
-}
+};
 
-const theme = {
+const theme: DefaultTheme = {
   colors,
   typographyVariants,
   breakpoints
-}
+};
 
-export default theme
+export default theme;

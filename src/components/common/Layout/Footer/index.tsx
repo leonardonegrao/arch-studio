@@ -1,5 +1,5 @@
-import Logo from '../../../theme/Logo';
-import Button from '../../common/Button';
+import Logo from '../../../../theme/Logo';
+import Button from '../../Button';
 import { FooterContainer, MenuOption } from './styles';
 
 import Link from '@components/common/Link';

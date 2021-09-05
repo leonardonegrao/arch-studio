@@ -1,16 +1,42 @@
-import styled from 'styled-components';
+/* eslint-disable indent */
+import styled, { css } from 'styled-components';
+
+import { breakpointsMedia } from '@theme/utils/breakpointsMedia';
 
 export const Header = styled.header`
   display: flex;
-  align-items: bottom;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 
-  padding: 56px 0;
+  position: relative;
+
+  padding: 32px;
+
+  max-width: 100vw;
+
+  ${breakpointsMedia({
+  md: css`
+    justify-content: flex-start;
+
+    padding: 56px 0;
+    `,
+})}
 `;
 
 export const HeaderMenu = styled.nav`
-  display: flex;
+  display: none;
 
-  margin-left: 94px;
+  ${breakpointsMedia({
+  md: css`
+      display: flex;
+
+      margin-left: 78px;
+    `,
+  lg: css`
+      margin-left: 94px;
+    `,
+})}
 `;
 
 export const MenuOption = styled.div`

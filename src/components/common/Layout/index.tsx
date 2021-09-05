@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 
-import { getPageName } from '../../lib/paths';
+import { getPageName } from '../../../lib/paths';
 import Footer from './Footer';
 import Header from './Header';
 import {
@@ -20,7 +20,7 @@ export default function Layout({ children }) {
       >
         <PageMarker>
           <div />
-          <p>{ getPageName(router.pathname) }</p>
+          <p>{getPageName(router.pathname)}</p>
         </PageMarker>
       </motion.div>
       <PageContent>
