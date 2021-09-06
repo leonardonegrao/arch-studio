@@ -13,7 +13,7 @@ export const Header = styled.header`
 
   padding: 32px;
 
-  max-width: 100vw;
+  width: 100%;
 
   ${breakpointsMedia({
   md: css`

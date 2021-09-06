@@ -3,12 +3,22 @@ import styled from 'styled-components';
 export const AboutUsContainer = styled.div`
   position: relative;
 
+  height: 560px;
+  width: 100%;
+
   .content {
     position: absolute;
     z-index: 1;
+    top: 180px;
+    left: 32px;
+
+    max-width: 311px;
 
     h1 {
-      margin-bottom: 26px;
+      margin-bottom: 32px;
+      font-size: 40px;
+      font-weight: bold;
+      color: #fff;
     }
   }
 

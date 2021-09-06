@@ -19,7 +19,7 @@ export default function WelcomeSection(): JSX.Element {
       </div>
 
       <div className="about-arch-studio">
-        <div style={{ maxWidth: '446px', marginRight: '125px' }}>
+        <div>
           <Typography variant="heading2" tag="h2" color="veryDarkBlue">
             Welcome to Arch Studio
           </Typography>

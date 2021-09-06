@@ -1,21 +1,16 @@
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import React from 'react';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-import { AboutUsContainer } from './components/AboutUsSection';
+import AboutUsSection from './components/AboutUsSection';
 import Carousel from './components/Carousel';
 import Featured from './components/Featured';
 import WelcomeSection from './components/WelcomeSection';
 
-import Button from '@components/common/Button';
 import SEO from '@components/common/SEO';
-import Typography from '@components/foundation/Typography';
 
 import Project from '@models/Project';
-
-import imageSmallTeam from '@public/assets/home/desktop/image-small-team.jpg';
 
 
 const HomeMain = styled.main`
@@ -56,23 +51,8 @@ export default function HomeScreen({ staticProjects }: HomeProps): JSX.Element {
         >
           <Carousel items={carouselProjects} />
           <WelcomeSection />
+          <AboutUsSection />
 
-          <AboutUsContainer>
-            <div className="content">
-              <Typography variant="heading1Small" color="white" tag="h1">
-                Small team, big ideas
-              </Typography>
-
-              <Button variant="default">About Us</Button>
-            </div>
-
-            <Image
-              src={imageSmallTeam}
-              layout="fill"
-              alt="Image of a construction complex surrounded by water"
-              className="about-us-background"
-            />
-          </AboutUsContainer>
           <Featured featuredProjects={featuredProjects} />
         </motion.div>
       </HomeMain>

@@ -3,9 +3,12 @@ import styled from 'styled-components';
 export const LayoutWrapper = styled.div`
   display: flex;
   margin: auto;
+
+  width: 100%;
 `;
 
 export const PageContent = styled.div`
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   

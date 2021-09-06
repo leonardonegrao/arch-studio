@@ -1,15 +1,27 @@
 import styled from 'styled-components';
 
-export const FeaturedProjectsWrapper = styled.div`
+export const FeaturedContainer = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  margin: auto;
+  margin-top: 72px;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-    flex-direction: row;
+  max-width: 311px;
+
+  .featured-title {
+    margin-bottom: 48px;
   }
 `;
 
-export const FeaturedProject = styled.article`
-  
+export const FeaturedProjectsWrapper = styled.div`
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+
+  margin-bottom: 24px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;

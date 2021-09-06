@@ -1,11 +1,18 @@
-import styled from 'styled-components';
+/* eslint-disable indent */
+import styled, { css } from 'styled-components';
+
+import { breakpointsMedia } from '@theme/utils/breakpointsMedia';
 
 export const WelcomeSectionWrapper = styled.section`
   position: relative;
 
   height: 668px;
-  margin-top: 95px;
-  margin-bottom: 200px;
+  margin-top: 140px;
+  margin-bottom: 97px;
+
+  max-width: 311px;
+  margin-left: auto;
+  margin-right: auto;
 
   .welcome-floating-message-wrapper {
     position: absolute;
@@ -15,13 +22,20 @@ export const WelcomeSectionWrapper = styled.section`
     left: 0;
     z-index: 1;
 
-    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-      display: block;
+    ${breakpointsMedia({
+  md: css`
+        display: block;
 
-      h2 {
-        font-size: 120px;
-      }
-    }
+        h2 {
+          font-size: 120px;
+        }
+      `,
+  lg: css`
+        h2 {
+          font-size: ${({ theme }) => theme.typographyVariants.heading1Large};
+        }
+      `,
+})}
 
     @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
       h2 {

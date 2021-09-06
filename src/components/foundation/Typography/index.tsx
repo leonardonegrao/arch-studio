@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-interface TextProps {
+interface TextProps extends React.HTMLAttributes<HTMLParagraphElement> {
   tag?: React.ElementType
   variant: 'heading1Large' | 'heading1Small' | 'heading2' | 'heading3' | 'body'
   color: 'veryDarkBlue' | 'darkGrey' | 'mediumGrey' | 'lightGrey' | 'veryLightGrey' | 'red' | 'white'

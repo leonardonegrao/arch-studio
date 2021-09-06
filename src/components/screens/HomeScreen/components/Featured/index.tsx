@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { FeaturedProjectsWrapper } from './style';
+import { FeaturedContainer, FeaturedProjectsWrapper } from './style';
 
 import Button from '@components/common/Button';
 import Link from '@components/common/Link';
@@ -19,19 +19,15 @@ export default function Featured({ featuredProjects }: FeaturedProps) {
   }
 
   return (
-    <>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          marginTop: '200px',
-          marginBottom: '64px',
-        }}
+    <FeaturedContainer>
+      <Typography
+        variant="heading2"
+        tag="h2"
+        color="veryDarkBlue"
+        className="featured-title"
       >
-        <Typography variant="heading2" tag="h2" color="veryDarkBlue">Featured</Typography>
-        <Button variant="default">See All</Button>
-      </div>
+        Featured
+      </Typography>
       <FeaturedProjectsWrapper>
         {featuredProjects && (featuredProjects.map((project, index) => (
           <ProjectComponent key={project.id} isFeatured>
@@ -53,6 +49,7 @@ export default function Featured({ featuredProjects }: FeaturedProps) {
           </ProjectComponent>
         )))}
       </FeaturedProjectsWrapper>
-    </>
+      <Button variant="default" className="featured-button">See All</Button>
+    </FeaturedContainer>
   );
 }

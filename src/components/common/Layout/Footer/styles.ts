@@ -2,54 +2,54 @@ import styled from 'styled-components';
 
 export const FooterContainer = styled.footer`
   display: flex;
-  position: relative;
+  flex-direction: column;
+  align-items: center;
 
-  max-width: 1110px;
-
-  margin-top: 200px;
+  width: 100%;
+  margin-top: 132px;
+  padding-bottom: 48px;
+  
+  background-color: ${({ theme }) => theme.colors.veryLightGrey};
 
   .logo-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    height: 200px;
-    width: 200px;
+    height: 120px;
+    width: 120px;
+    margin-bottom: -28px;
+
+    transform: translateY(-50%);
 
     background: ${({ theme }) => theme.colors.veryDarkBlue};
   }
 
   .menu-wrapper {
     display: flex;
+    flex-direction: column;
     align-items: center;
 
-    padding-left: 56px;
-
     background: ${({ theme }) => theme.colors.veryLightGrey};
-    min-width: 784px;
   }
 
   .button-wrapper {
-    position: absolute;
-    top: 64px;
-    right: 0;
+    margin-top: 32px;
   }
 `;
 
 export const MenuOption = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
 
   & + & {
-    margin-left: 56px;
+    margin-top: 32px;
   }
 
   a {
     font-size: ${({ theme }) => theme.typographyVariants.body.fontSize};
     line-height: ${({ theme }) => theme.typographyVariants.body.lineHeight};
-    font-weight: '600';
+    font-weight: bold;
 
     text-decoration: none;
     color: ${({ theme }) => theme.colors.mediumGrey};
