@@ -1,4 +1,3 @@
-/* eslint-disable indent */
 import styled, { css } from 'styled-components';
 
 import { breakpointsMedia } from '@theme/utils/breakpointsMedia';
@@ -13,30 +12,48 @@ export const Header = styled.header`
 
   padding: 32px;
 
-  width: 100%;
+  width: 100vw;
+
+  .page-marker-wrapper {
+    position: absolute;
+    display: none;
+  }
 
   ${breakpointsMedia({
-  md: css`
-    justify-content: flex-start;
+    md: css`
+      width: 100%;
+      justify-content: flex-start;
 
-    padding: 56px 0;
+      padding: 56px 0;
+
+      .page-marker-wrapper {
+        display: block;
+
+        top: 0;
+        left: -58px;
+      }
     `,
-})}
+    lg: css`
+      .page-marker-wrapper {
+        left: -100px;
+      }
+    `,
+  })}
 `;
 
 export const HeaderMenu = styled.nav`
   display: none;
 
   ${breakpointsMedia({
-  md: css`
+    md: css`
       display: flex;
 
       margin-left: 78px;
     `,
-  lg: css`
+    lg: css`
       margin-left: 94px;
     `,
-})}
+  })}
 `;
 
 export const MenuOption = styled.div`
@@ -63,4 +80,36 @@ export const MenuOption = styled.div`
       color: ${({ theme }) => theme.colors.veryDarkBlue};
     }
   }
+`;
+
+export const PageMarker = styled.div`
+  ${breakpointsMedia({
+    md: css`
+      float: left;
+      display: flex;
+      margin-right: 33px;
+
+      max-width: 25px;
+
+      flex-direction: column;
+      align-items: center;
+
+      div {
+        height: 104px;
+        width: 1px;
+        background: ${({ theme }) => theme.colors.lightGrey};
+        margin-bottom: 48px;
+      }
+
+      p {
+        text-transform: uppercase;
+        writing-mode: vertical-rl;
+        letter-spacing: 15px;
+        color: ${({ theme }) => theme.colors.lightGrey};
+      }
+    `,
+    lg: css`
+      margin-right: 76px;
+    `,
+  })}
 `;

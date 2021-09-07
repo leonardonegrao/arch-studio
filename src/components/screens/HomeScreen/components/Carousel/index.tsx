@@ -87,6 +87,7 @@ export default function Carousel({ carouselProjects }: CarouselProps) {
             src={heroImage.url}
             alt={heroImage.alt}
             layout="fill"
+            objectFit="cover"
           />
         )}
       </CarouselImageWrapper>

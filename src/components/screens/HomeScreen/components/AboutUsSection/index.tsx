@@ -21,6 +21,7 @@ export default function AboutUsSection() {
       <Image
         src={imageSmallTeam}
         layout="fill"
+        objectFit="cover"
         alt="Image of a construction complex surrounded by water"
         className="about-us-background"
       />

@@ -34,6 +34,8 @@ export default function Footer() {
       <div className="button-wrapper">
         <Button variant="default">See our portfolio</Button>
       </div>
+
+      <div className="background" />
     </FooterContainer>
   );
 }

@@ -41,7 +41,7 @@ export const FooterContainer = styled.footer`
   }
 
   ${breakpointsMedia({
-  md: css`
+    md: css`
       flex-direction: row;
       padding: 0;
 
@@ -70,17 +70,51 @@ export const FooterContainer = styled.footer`
         margin-top: 0;
       }
     `,
-  lg: css`
-      max-width: 984px;
+    lg: css`
+      display: grid;
+      grid-template-columns: repeat(12, 65px);
+      grid-column-gap: 30px;
+      grid-template-areas: "logo logo logo menu menu menu menu menu menu button button button";
+
+      max-width: 1110px;
       margin-left: auto;
       margin-right: auto;
+
+      background-color: transparent;
 
       .logo-wrapper {
         height: 200px;
         width: 200px;
+
+        grid-area: logo;
       }
-  `,
-})}
+
+      .menu-wrapper {
+        grid-area: menu;
+      }
+
+      .button-wrapper {
+        position: unset;
+        transform: unset;
+
+        margin-left: 0px;
+
+        grid-area: button;
+        justify-self: end;
+      }
+
+      .background {
+        background-color: red;
+        height: 200px;
+        width: 984px;
+        grid-column: 1 / 11;
+        grid-row: 1;
+
+        background-color: ${({ theme }) => theme.colors.veryLightGrey};
+        z-index: -1;
+      }
+    `,
+  })}
 `;
 
 export const MenuOption = styled.div`

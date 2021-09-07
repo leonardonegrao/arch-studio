@@ -1,10 +1,11 @@
+import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import Logo from '../../../../theme/Logo';
 import Burger from './components/Burger';
 import MobileMenu from './components/MobileMenu';
-import { Header, HeaderMenu, MenuOption } from './styles';
+import { Header, HeaderMenu, MenuOption, PageMarker } from './styles';
 
 import Link from '@components/common/Link';
 
@@ -22,37 +23,65 @@ function MenuOptionUnderscore({ isVisible }: { isVisible: boolean }) {
   );
 }
 
+const routes = [
+  {
+    title: 'Portfolio',
+    path: '/portfolio',
+  },
+  {
+    title: 'About Us',
+    path: '/about-us',
+  },
+  {
+    title: 'Contact',
+    path: '/contact',
+  },
+];
+
 export default function Home() {
   const routerPathName = useRouter().pathname;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const getRouteTitle = useCallback((pathname) => {
+    if (pathname === '/') {
+      return 'Home';
+    }
+
+    const route = routes.find((route) => route.path === pathname);
+
+    return route.title;
+  }, []);
+
+  useEffect(() => {
+
+  }, [routerPathName]);
+
   return (
     <Header>
+      <motion.div
+        className="page-marker-wrapper"
+        initial={{ y: -500 }}
+        animate={{ y: 0 }}
+        transition={{ ease: 'easeInOut', duration: 1.5 }}
+      >
+        <PageMarker>
+          <div />
+          <p>{getRouteTitle(routerPathName)}</p>
+        </PageMarker>
+      </motion.div>
       <Link href="/">
         <Logo />
       </Link>
 
       <HeaderMenu>
-        <MenuOption>
-          <Link href="/portfolio">
-            Portfolio
-          </Link>
-          <MenuOptionUnderscore isVisible={routerPathName === '/portfolio'} />
-        </MenuOption>
-
-        <MenuOption>
-          <Link href="/about-us">
-            About Us
-          </Link>
-          <MenuOptionUnderscore isVisible={routerPathName === '/about-us'} />
-        </MenuOption>
-
-        <MenuOption>
-          <Link href="/contact">
-            Contact
-          </Link>
-          <MenuOptionUnderscore isVisible={routerPathName === '/contact'} />
-        </MenuOption>
+        {routes.map((route) => (
+          <MenuOption key={route.path}>
+            <Link href={route.path}>
+              {route.title}
+            </Link>
+            <MenuOptionUnderscore isVisible={routerPathName === route.path} />
+          </MenuOption>
+        ))}
       </HeaderMenu>
 
       <Burger open={isMenuOpen} setOpen={setIsMenuOpen} />

@@ -4,8 +4,6 @@ import styled, { css } from 'styled-components';
 import { breakpointsMedia } from '@theme/utils/breakpointsMedia';
 
 export const WelcomeSectionWrapper = styled.section`
-  position: relative;
-
   height: 668px;
   margin-top: 140px;
   margin-bottom: 97px;
@@ -14,58 +12,80 @@ export const WelcomeSectionWrapper = styled.section`
   margin-left: auto;
   margin-right: auto;
 
-  .welcome-floating-message-wrapper {
-    position: absolute;
-    display: none;
+  ${breakpointsMedia({
+    md: css`
+      max-width: 573px;
+    `,
+    lg: css`
+      display: grid;
 
-    top: 0;
-    left: 0;
-    z-index: 1;
+      grid-template-columns: repeat(12, 65px);
+      grid-template-rows: repeat(10, 60px);
+      gap: 12px 30px;
 
-    ${breakpointsMedia({
-  md: css`
-        display: block;
+      max-width: 1110px;
+      margin-top: 95px;
+      margin-bottom: 200px;
+    `,
+  })}
+`;
 
-        h2 {
-          font-size: 120px;
-        }
-      `,
-  lg: css`
-        h2 {
-          font-size: ${({ theme }) => theme.typographyVariants.heading1Large};
-        }
-      `,
-})}
+export const WelcomeFloatingMessageWrapper = styled.div`
+  display: none;
 
-    @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+  ${breakpointsMedia({
+    md: css`
+      display: block;
+
       h2 {
-        font-size: ${({ theme }) =>
-    theme.typographyVariants.heading1Large.fontSize};
+        font-size: 120px;
       }
-    }
+    `,
+    lg: css`
+      grid-column: 1;
+      grid-row: 2;
+      align-self: center;
+      z-index: 1;
+
+      padding-top: 40px;
+
+      h2 {
+        font-size: ${({ theme }) => theme.typographyVariants.heading1Large.fontSize};
+      }
+    `,
+  })}
+`;
+
+export const WelcomeContentWrapper = styled.div`
+  display: flex;
+  align-items: flex-start;
+  height: 100%;
+
+  h2 {
+    margin-bottom: 56px;
   }
 
-  .about-arch-studio {
-    display: flex;
-    align-items: flex-end;
-    height: 100%;
-
-    h2 {
-      margin-bottom: 56px;
-    }
-
-    p + p {
-      margin-top: 15px;
-    }
-
-    @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-      justify-content: flex-end;
-    }
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
-      .image-welcome {
-        display: none;
-      }
-    }
+  p + p {
+    margin-top: 15px;
   }
+
+  ${breakpointsMedia({
+    lg: css`
+      grid-column: 3/8;
+      grid-row-start: 4;
+    `,
+  })}
+`;
+
+export const WelcomeImageWrapper = styled.div`
+  display: none;
+
+  ${breakpointsMedia({
+    lg: css`
+      display: block;
+
+      grid-column: 9/13;
+      grid-row: 3;
+    `,
+  })}
 `;

@@ -13,26 +13,28 @@ export const CarouselWrapper = styled.div`
   width: 100%;
 
   ${breakpointsMedia({
-  md: css`
-    width: 573px;
-  `,
-  lg: css`
-    display: block;
+    md: css`
+      width: 573px;
+    `,
+    lg: css`
+      display: block;
 
-    position: relative;
-    width: 1110px;
-  `,
-})}
+      position: relative;
+      width: 1110px;
+    `,
+  })}
 `;
 
 export const CarouselImageWrapper = styled.div`
   width: 100%;
   height: 720px;
   filter: brightness(70%);
-  
-  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-    width: 1110px;
-  }
+
+  ${breakpointsMedia({
+    lg: css`
+      width: 1110px;
+    `,
+  })}
 `;
 
 export const CarouselItemInfo = styled.div`
@@ -42,45 +44,46 @@ export const CarouselItemInfo = styled.div`
   max-width: 311px;
 
   ${breakpointsMedia({
-  md: css`
+    md: css`
       max-width: 457px;
     `,
-  lg: css`
-    top: 180px;
-    left: 190px;
+    lg: css`
+      top: 180px;
+      left: 190px;
 
-    max-width: 544px;
-  `,
-})}
+      max-width: 544px;
+    `,
+  })}
 `;
 
 export const CarouselOptionsSelector = styled.div`
-  position: absolute;
-  display: flex;
-
-  bottom: 0px;
-  left: -80px;
-  z-index: 10;
-
-  ${ButtonWrapper} {
-    background: #fff;
-    color: ${({ theme }) => theme.colors.mediumGrey};
-
-    &.active {
-      background: ${({ theme }) => theme.colors.veryDarkBlue};
-      color: #fff;
-    }
-
-    &.inactive {
-      &:hover {
-        background: ${({ theme }) => theme.colors.veryLightGrey}
-      }
-    }
-  }
-
+  display: none;
+  
   ${breakpointsMedia({
-  lg: css`
-    display: none;
+    lg: css`
+      display: flex;
+
+      position: absolute;
+
+      bottom: 0px;
+      left: -80px;
+      z-index: 10;
+
+      ${ButtonWrapper} {
+        background: #fff;
+        color: ${({ theme }) => theme.colors.mediumGrey};
+
+        &.active {
+          background: ${({ theme }) => theme.colors.veryDarkBlue};
+          color: #fff;
+        }
+
+        &.inactive {
+          &:hover {
+            background: ${({ theme }) => theme.colors.veryLightGrey}
+          }
+        }
+      }
     `,
-})}
+  })}
 `;

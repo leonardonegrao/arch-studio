@@ -28,6 +28,9 @@ export const typographyVariants = {
     lineHeight: '80px',
     letterSpacing: '-2px',
     fontWeight: '700',
+    fontSizeSm: '40px',
+    lineHeightSm: '48px',
+    letterSpacingSm: '-1.2px',
   },
   heading2: {
     fontSize: '56px',

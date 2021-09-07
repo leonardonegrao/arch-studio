@@ -45,6 +45,7 @@ export default function Featured({ featuredProjects }: FeaturedProps) {
               src={findImage(project).url}
               alt={findImage(project).alt}
               layout="fill"
+              objectFit="cover"
             />
           </ProjectComponent>
         )))}
