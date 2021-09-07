@@ -18,26 +18,26 @@ const HomeMain = styled.main`
 `;
 
 interface HomeProps {
-  staticProjects: Project[];
+  projects: Project[];
 }
 
-export default function HomeScreen({ staticProjects }: HomeProps): JSX.Element {
+export default function HomeScreen({ projects }: HomeProps): JSX.Element {
   const [carouselProjects, setCarouselProjects] = useState<Project[]>([]);
   const [featuredProjects, setFeaturedProjects] = useState<Project[]>([]);
 
-  function mapProjects(projects: Project[]) {
-    const carouselProjects = projects.filter(project => project.carousel);
-    const featuredProjects = projects.slice(0, 3);
+  function mapProjects(unfilteredProjects: Project[]) {
+    const carouselProjects = unfilteredProjects.filter(project => project.carousel);
+    const featuredProjects = unfilteredProjects.slice(0, 3);
 
     setCarouselProjects(carouselProjects);
     setFeaturedProjects(featuredProjects);
   }
 
   useEffect(() => {
-    if (staticProjects) {
-      mapProjects(staticProjects);
+    if (projects) {
+      mapProjects(projects);
     }
-  }, [staticProjects]);
+  }, [projects]);
 
   return (
     <>
@@ -49,10 +49,9 @@ export default function HomeScreen({ staticProjects }: HomeProps): JSX.Element {
           animate={{ opacity: 1 }}
           transition={{ ease: 'easeOut', duration: 1.2 }}
         >
-          <Carousel items={carouselProjects} />
+          <Carousel carouselProjects={carouselProjects} />
           <WelcomeSection />
           <AboutUsSection />
-
           <Featured featuredProjects={featuredProjects} />
         </motion.div>
       </HomeMain>

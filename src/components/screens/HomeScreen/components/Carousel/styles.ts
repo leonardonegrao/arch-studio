@@ -1,6 +1,9 @@
-import styled from 'styled-components';
+/* eslint-disable indent */
+import styled, { css } from 'styled-components';
 
 import { ButtonWrapper } from '@components/common/Button';
+
+import { breakpointsMedia } from '@theme/utils/breakpointsMedia';
 
 export const CarouselWrapper = styled.div`
   display: flex;
@@ -9,26 +12,23 @@ export const CarouselWrapper = styled.div`
 
   width: 100%;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+  ${breakpointsMedia({
+  md: css`
     width: 573px;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+  `,
+  lg: css`
     display: block;
 
     position: relative;
     width: 1110px;
-  }
+  `,
+})}
 `;
 
 export const CarouselImageWrapper = styled.div`
   width: 100%;
   height: 720px;
   filter: brightness(70%);
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-    width: 573px;
-  }
   
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     width: 1110px;
@@ -38,18 +38,20 @@ export const CarouselImageWrapper = styled.div`
 export const CarouselItemInfo = styled.div`
   position: absolute;
   z-index: 1;
+  
   max-width: 311px;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-    max-width: 457px;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+  ${breakpointsMedia({
+  md: css`
+      max-width: 457px;
+    `,
+  lg: css`
     top: 180px;
     left: 190px;
 
     max-width: 544px;
-  }
+  `,
+})}
 `;
 
 export const CarouselOptionsSelector = styled.div`
@@ -76,7 +78,9 @@ export const CarouselOptionsSelector = styled.div`
     }
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+  ${breakpointsMedia({
+  lg: css`
     display: none;
-  }
+    `,
+})}
 `;

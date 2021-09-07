@@ -28,8 +28,8 @@ export default function Layout({ children }) {
           <Header />
           {children}
         </HeaderMarkerWrapper>
-        <Footer />
       </PageContent>
+      <Footer />
     </LayoutWrapper>
   );
 }

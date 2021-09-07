@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const LayoutWrapper = styled.div`
   display: flex;
+  flex-direction: column;
   margin: auto;
 
   width: 100%;
@@ -28,7 +29,7 @@ export const HeaderMarkerWrapper = styled.div`
 
 export const PageMarker = styled.div`
   display: none;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
 
   div {

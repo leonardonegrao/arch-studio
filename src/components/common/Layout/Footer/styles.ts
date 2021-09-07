@@ -1,4 +1,7 @@
-import styled from 'styled-components';
+/* eslint-disable indent */
+import styled, { css } from 'styled-components';
+
+import { breakpointsMedia } from '@theme/utils/breakpointsMedia';
 
 export const FooterContainer = styled.footer`
   display: flex;
@@ -36,12 +39,51 @@ export const FooterContainer = styled.footer`
   .button-wrapper {
     margin-top: 32px;
   }
+
+  ${breakpointsMedia({
+  md: css`
+      flex-direction: row;
+      padding: 0;
+
+      position: relative;
+
+      max-width: calc(100vw - 156px);
+
+      .logo-wrapper {
+        transform: translateY(0);
+        margin: 0;
+      }
+
+      .menu-wrapper {
+        flex-direction: row;
+      }
+
+      .button-wrapper {
+        margin-left: 257px;
+        position: absolute;
+        top: 50%;
+        right: -156px;
+        z-index: 1;
+
+        transform: translate(0, -50%);
+        
+        margin-top: 0;
+      }
+    `,
+  lg: css`
+      max-width: 984px;
+      margin-left: auto;
+      margin-right: auto;
+
+      .logo-wrapper {
+        height: 200px;
+        width: 200px;
+      }
+  `,
+})}
 `;
 
 export const MenuOption = styled.div`
-  display: flex;
-  flex-direction: column;
-
   & + & {
     margin-top: 32px;
   }
@@ -60,4 +102,17 @@ export const MenuOption = styled.div`
       color: ${({ theme }) => theme.colors.veryDarkBlue};
     }
   }
+
+  ${breakpointsMedia({
+  md: css`
+      & + & {
+        margin-top: 0px;
+        margin-left: 56px;
+      }
+
+      &:first-of-type {
+        margin-left: 40px;
+      }
+    `,
+})}
 `;
