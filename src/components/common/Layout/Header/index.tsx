@@ -39,20 +39,14 @@ export default function Home() {
     {
       title: 'Contact',
       path: '/contact',
-    },
-    {
-      title: 'Not found',
-      path: '/404',
-    },
-    {
-      title: 'Error',
-      path: '/500',
-    },
+    }
   ];
 
   function getRouteTitle(pathname: string) {
     if (pathname === '/') {
       return 'Home';
+    } else if (pathname === '/404' || pathname === '/500') {
+      return '';
     }
 
     const route = routes.find((route) => route.path === pathname);
