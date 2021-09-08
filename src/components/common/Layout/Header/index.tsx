@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
-import { useCallback, useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import Logo from '../../../../theme/Logo';
 import Burger from './components/Burger';
@@ -23,26 +23,34 @@ function MenuOptionUnderscore({ isVisible }: { isVisible: boolean }) {
   );
 }
 
-const routes = [
-  {
-    title: 'Portfolio',
-    path: '/portfolio',
-  },
-  {
-    title: 'About Us',
-    path: '/about-us',
-  },
-  {
-    title: 'Contact',
-    path: '/contact',
-  },
-];
-
 export default function Home() {
   const routerPathName = useRouter().pathname;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const getRouteTitle = useCallback((pathname) => {
+  const routes = [
+    {
+      title: 'Portfolio',
+      path: '/portfolio',
+    },
+    {
+      title: 'About Us',
+      path: '/about-us',
+    },
+    {
+      title: 'Contact',
+      path: '/contact',
+    },
+    {
+      title: 'Not found',
+      path: '/404',
+    },
+    {
+      title: 'Error',
+      path: '/500',
+    },
+  ];
+
+  function getRouteTitle(pathname: string) {
     if (pathname === '/') {
       return 'Home';
     }
@@ -50,11 +58,7 @@ export default function Home() {
     const route = routes.find((route) => route.path === pathname);
 
     return route.title;
-  }, []);
-
-  useEffect(() => {
-
-  }, [routerPathName]);
+  }
 
   return (
     <Header>
