@@ -2,9 +2,10 @@ import styled, { css } from 'styled-components';
 
 import { breakpointsMedia } from '@theme/utils/breakpointsMedia';
 
-export const LayoutWrapper = styled.div`
+export const StyledPageComponentWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   margin: auto;
 
   width: 100%;
@@ -15,7 +16,7 @@ export const MarkerPageWrapper = styled.div`
   flex-direction: row;
 `;
 
-export const HeaderPageContentWrapper = styled.div`
+export const HeaderPageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -23,7 +24,7 @@ export const HeaderPageContentWrapper = styled.div`
   width: 100%;
 `;
 
-export const PageContent = styled.div`
+export const StyledPageComponentWrapperContent = styled.div`
   width: 100%;
   margin-left: auto;
   margin-right: auto;
