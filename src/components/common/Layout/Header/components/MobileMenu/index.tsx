@@ -14,6 +14,7 @@ export default function MobileMenu() {
         position: 'absolute',
         zIndex: 10,
         top: 108,
+        right: 0,
       }}
       animate={{
         x: 0,

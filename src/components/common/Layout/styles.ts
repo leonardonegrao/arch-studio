@@ -19,6 +19,8 @@ export const HeaderPageContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin: auto;
+
+  width: 100%;
 `;
 
 export const PageContent = styled.div`

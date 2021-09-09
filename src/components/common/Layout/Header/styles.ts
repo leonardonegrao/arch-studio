@@ -12,7 +12,7 @@ export const Header = styled.header`
 
   padding: 32px;
 
-  width: 100vw;
+  width: 100%;
 
   .page-marker-wrapper {
     position: absolute;
@@ -21,7 +21,8 @@ export const Header = styled.header`
 
   ${breakpointsMedia({
     md: css`
-      width: 100%;
+      max-width: 573px;
+      margin: auto;
       justify-content: flex-start;
 
       padding: 56px 0;
@@ -34,6 +35,7 @@ export const Header = styled.header`
       }
     `,
     lg: css`
+      max-width: 1110px;
       .page-marker-wrapper {
         left: -100px;
       }

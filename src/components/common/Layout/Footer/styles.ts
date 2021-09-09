@@ -47,7 +47,7 @@ export const FooterContainer = styled.footer`
 
       position: relative;
 
-      max-width: calc(100vw - 156px);
+      max-width: calc(100% - 156px);
 
       .logo-wrapper {
         transform: translateY(0);
