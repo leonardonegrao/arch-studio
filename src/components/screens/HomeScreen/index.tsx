@@ -41,8 +41,6 @@ export default function HomeScreen({ projects }: HomeProps): JSX.Element {
 
   return (
     <>
-      <SEO title="Arch Studio" description="Small teams, big ideas" />
-
       <HomeMain>
         <motion.div
           initial={{ opacity: 0 }}

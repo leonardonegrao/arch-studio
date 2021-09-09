@@ -2,12 +2,13 @@ import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 
-import Logo from '../../../../theme/Logo';
 import Burger from './components/Burger';
 import MobileMenu from './components/MobileMenu';
 import { Header, HeaderMenu, MenuOption, PageMarker } from './styles';
 
 import Link from '@components/common/Link';
+
+import Logo from '@theme/Logo';
 
 function MenuOptionUnderscore({ isVisible }: { isVisible: boolean }) {
   return (
