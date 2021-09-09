@@ -8,21 +8,21 @@ import { CMSClient } from '@infra/cms/CMSClient';
 import { getProjects } from '@infra/cms/queries';
 
 interface HomeProps {
-  staticProjects: Project[];
+  projects: Project[];
 }
 
-export default function Home({ staticProjects }: HomeProps): JSX.Element {
-  return <HomeScreen staticProjects={staticProjects} />;
+export default function Home({ projects }: HomeProps): JSX.Element {
+  return <HomeScreen projects={projects} />;
 }
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const client = CMSClient();
   const { data } = await client.query({ query: getProjects, variables: {} });
-  const staticProjects = await data.response.allProjects;
+  const projects = await data.response.allProjects;
 
   return {
     props: {
-      staticProjects,
+      projects,
     },
   };
 };

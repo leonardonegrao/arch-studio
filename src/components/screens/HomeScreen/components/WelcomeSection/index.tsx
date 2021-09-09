@@ -2,8 +2,12 @@
 
 import Image from 'next/image';
 
-
-import { WelcomeSectionWrapper } from './styles';
+import {
+  WelcomeSectionWrapper,
+  WelcomeContentWrapper, 
+  WelcomeFloatingMessageWrapper, 
+  WelcomeImageWrapper 
+} from './styles';
 
 import Typography from '@components/foundation/Typography';
 
@@ -12,14 +16,14 @@ import imageWelcome from '@public/assets/home/desktop/image-welcome.jpg';
 export default function WelcomeSection(): JSX.Element {
   return (
     <WelcomeSectionWrapper>
-      <div className="welcome-floating-message-wrapper">
+      <WelcomeFloatingMessageWrapper>
         <Typography variant="heading1Large" color="veryLightGrey" tag={'h2'}>
           Welcome
         </Typography>
-      </div>
+      </WelcomeFloatingMessageWrapper>
 
-      <div className="about-arch-studio">
-        <div style={{ maxWidth: '446px', marginRight: '125px' }}>
+      <WelcomeContentWrapper>
+        <div>
           <Typography variant="heading2" tag="h2" color="veryDarkBlue">
             Welcome to Arch Studio
           </Typography>
@@ -42,16 +46,15 @@ export default function WelcomeSection(): JSX.Element {
             the test of time.
           </Typography>
         </div>
-
-        <div className="image-welcome">
-          <Image
-            src={imageWelcome}
-            alt="Decorative image of the facade of a building"
-            height="568"
-            width="350"
-          />
-        </div>
-      </div>
+      </WelcomeContentWrapper>
+      <WelcomeImageWrapper>
+        <Image
+          src={imageWelcome}
+          alt="Decorative image of the facade of a building"
+          height={568}
+          width={350}
+        />
+      </WelcomeImageWrapper>
     </WelcomeSectionWrapper>
   );
 }

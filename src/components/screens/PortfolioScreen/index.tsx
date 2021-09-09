@@ -59,6 +59,7 @@ export default function PortfolioScreen({ projects }: PortfolioScreenProps) {
             src={project.mainImage.url}
             alt={project.mainImage.alt}
             layout="fill"
+            objectFit="cover"
           />
         </ProjectWrapper>
       ))}

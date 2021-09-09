@@ -16,16 +16,16 @@ import Typography from '@components/foundation/Typography';
 import Project, { ProjectImage } from '@models/Project';
 
 interface CarouselProps {
-  items: Project[];
+  carouselProjects: Project[];
 }
 
-export default function Carousel({ items }: CarouselProps) {
-  const [carouselItems, setCarouselItems] = useState<Project[]>([]);
-  const [activeItem, setActiveItem] = useState<Project>(null);
-  const [heroImage, setHeroImage] = useState<ProjectImage>(null);
+export default function Carousel({ carouselProjects }: CarouselProps) {
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [activeProject, setActiveProject] = useState<Project | null>(null);
+  const [heroImage, setHeroImage] = useState<ProjectImage | null>(null);
 
   function handleActiveItemChange(index: number) {
-    setActiveItem(carouselItems[index]);
+    setActiveProject(projects[index]);
   }
 
   function checkIfValid(arrayOfProjects: Project[]) {
@@ -39,22 +39,22 @@ export default function Carousel({ items }: CarouselProps) {
   }
 
   useEffect(() => {
-    if (items.length > 0) {
-      setCarouselItems(items);
+    if (carouselProjects) {
+      setProjects(carouselProjects);
 
-      setActiveItem(carouselItems[0]); // first item is active by default
+      setActiveProject(projects[0]); // first item is active by default
     }
-  }, [items, carouselItems]);
+  }, [carouselProjects, projects]);
 
   useEffect(() => {
-    if (activeItem) {
-      const image = getHeroImage(activeItem);
+    if (activeProject) {
+      const image = getHeroImage(activeProject);
 
       setHeroImage(image);
     }
-  }, [activeItem]);
+  }, [activeProject]);
 
-  if (!checkIfValid(carouselItems)) {
+  if (!checkIfValid(projects)) {
     return (
       <CarouselWrapper>
       </CarouselWrapper>
@@ -70,11 +70,11 @@ export default function Carousel({ items }: CarouselProps) {
             color="white"
             tag="h1"
           >
-            {activeItem?.title}
+            {activeProject?.title}
           </Typography>
         </div>
         <Typography variant="body" color="white" tag="p">
-          {activeItem?.description}
+          {activeProject?.description}
         </Typography>
 
         <div style={{ marginTop: '40px' }}>
@@ -87,6 +87,7 @@ export default function Carousel({ items }: CarouselProps) {
             src={heroImage.url}
             alt={heroImage.alt}
             layout="fill"
+            objectFit="cover"
           />
         )}
       </CarouselImageWrapper>
@@ -96,11 +97,11 @@ export default function Carousel({ items }: CarouselProps) {
         transition={{ ease: 'easeOut', duration: 1.2 }}
       >
         <CarouselOptionsSelector>
-          {carouselItems.map((item, index) => (
+          {projects.map((item, index) => (
             <Button
               variant="square"
               showArrow={false}
-              className={activeItem?.slug === carouselItems[index]?.slug ? 'active' : 'inactive'}
+              className={activeProject?.slug === projects[index]?.slug ? 'active' : 'inactive'}
               key={item?.slug}
               onClick={() => handleActiveItemChange(index)}
             >
