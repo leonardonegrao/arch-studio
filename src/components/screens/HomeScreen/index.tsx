@@ -8,8 +8,6 @@ import Carousel from './components/Carousel';
 import Featured from './components/Featured';
 import WelcomeSection from './components/WelcomeSection';
 
-import SEO from '@components/common/SEO';
-
 import Project from '@models/Project';
 
 
@@ -41,8 +39,6 @@ export default function HomeScreen({ projects }: HomeProps): JSX.Element {
 
   return (
     <>
-      <SEO title="Arch Studio" description="Small teams, big ideas" />
-
       <HomeMain>
         <motion.div
           initial={{ opacity: 0 }}

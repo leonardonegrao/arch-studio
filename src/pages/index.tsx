@@ -1,6 +1,7 @@
 import { GetStaticProps } from 'next';
 
 import HomeScreen from '@components/screens/HomeScreen';
+import pageComponentHoc from '@components/wrappers/PageComponentWrapper/hoc';
 
 import Project from '@models/Project';
 
@@ -11,9 +12,18 @@ interface HomeProps {
   projects: Project[];
 }
 
-export default function Home({ projects }: HomeProps): JSX.Element {
-  return <HomeScreen projects={projects} />;
+function HomePage({ projects }: HomeProps) {
+  return (
+    <HomeScreen projects={projects} />
+  );
 }
+
+export default pageComponentHoc(HomePage, {
+  seoProps: {
+    title: 'Home',
+    description: 'Welcome to Arch Studio, we have a unique network and skillset to help bring your projects to life.',
+  },
+});
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const client = CMSClient();

@@ -1,8 +1,9 @@
-import Logo from '../../../../theme/Logo';
-import Button from '../../Button';
 import { FooterContainer, MenuOption } from './styles';
 
+import Button from '@components/common/Button';
 import Link from '@components/common/Link';
+
+import Logo from '@theme/Logo';
 
 export default function Footer() {
   return (
