@@ -8,8 +8,6 @@ import Carousel from './components/Carousel';
 import Featured from './components/Featured';
 import WelcomeSection from './components/WelcomeSection';
 
-import SEO from '@components/common/SEO';
-
 import Project from '@models/Project';
 
 
