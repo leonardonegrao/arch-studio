@@ -1,13 +1,16 @@
+import React from 'react';
 import Lottie from 'react-lottie';
 
 import * as animationData from './animation.json';
+import { NotFoundAnimationWrapper, NotFoundScreenWrapper } from './style';
 
+import Button from '@components/common/Button';
+import Link from '@components/common/Link';
 import Typography from '@components/foundation/Typography';
-
 
 export default function NotFoundScreen() {
   return (
-    <div>
+    <NotFoundScreenWrapper>
       <Typography
         variant="heading1Small"
         color="veryDarkBlue"
@@ -16,15 +19,15 @@ export default function NotFoundScreen() {
         The page you are looking for does not exist.
       </Typography>
 
-      <Lottie
-        options={{
-          animationData,
-          loop: true,
-          autoplay: true,
-        }}
-        height={400}
-        width={400}
-      />
+      <NotFoundAnimationWrapper>
+        <Lottie
+          options={{
+            animationData,
+            loop: true,
+            autoplay: true,
+          }}
+        />
+      </NotFoundAnimationWrapper>
 
       <Typography
         variant="body"
@@ -33,6 +36,10 @@ export default function NotFoundScreen() {
       >
         The content might have been moved/deleted or the URL might be incorrect.
       </Typography>
-    </div>
+
+      <Link href="/">
+        <Button variant="default" href="/">Take me back home</Button>
+      </Link>
+    </NotFoundScreenWrapper>
   );
 }

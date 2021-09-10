@@ -13,7 +13,6 @@ export const Header = styled.header`
   padding: 32px;
 
   width: 100%;
-  z-index: 20;
 
   .page-marker-wrapper {
     position: absolute;
