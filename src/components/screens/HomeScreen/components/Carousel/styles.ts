@@ -30,6 +30,8 @@ export const CarouselImageWrapper = styled.div`
   height: 720px;
   filter: brightness(70%);
 
+  position: relative;
+
   ${breakpointsMedia({
     lg: css`
       width: 1110px;
