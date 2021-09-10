@@ -14,20 +14,31 @@ import SEOProps from '@models/SEOProps';
 
 interface PageComponentWrapperProps {
   seoProps: SEOProps;
+  displayProps: {
+    showHeader: boolean;
+    showFooter: boolean;
+  };
   children: React.ReactNode;
 }
 
-export default function PageComponentWrapper({ seoProps, children }: PageComponentWrapperProps) {
+export default function PageComponentWrapper({
+  seoProps,
+  children,
+  displayProps = {
+    showHeader: true,
+    showFooter: true,
+  }
+}: PageComponentWrapperProps) {
   return (
     <StyledPageComponentWrapper>
       <SEO {...seoProps} />
       <HeaderPageWrapper>
-        <Header />
+        {displayProps.showHeader && <Header />}
         <StyledPageComponentWrapperContent>
           {children}
         </StyledPageComponentWrapperContent>
       </HeaderPageWrapper>
-      <Footer />
+      {displayProps.showFooter && <Footer />}
     </StyledPageComponentWrapper>
   );
 }

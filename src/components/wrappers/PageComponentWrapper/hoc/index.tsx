@@ -8,15 +8,19 @@ import SEOProps from '@models/SEOProps';
 
 interface WrapperProps {
   seoProps: SEOProps;
+  displayProps?: {
+    showHeader: boolean;
+    showFooter: boolean;
+  };
 }
 
 export default function pageComponentHoc(
   WrappedComponent: React.ComponentType<any>,
-  { seoProps }: WrapperProps,
+  { seoProps, displayProps = { showHeader: true, showFooter: true } }: WrapperProps,
 ) {
   const PageComponent = (props) => (
     <GlobalProvider>
-      <PageComponentWrapper seoProps={seoProps} >
+      <PageComponentWrapper seoProps={seoProps} displayProps={displayProps} >
         <WrappedComponent {...props} />
       </PageComponentWrapper>
     </GlobalProvider>
