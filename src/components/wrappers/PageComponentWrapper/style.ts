@@ -6,7 +6,10 @@ export const StyledPageComponentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  margin: auto;
+  
+  align-items: center;
+
+  min-height: 100vh;
 
   width: 100%;
 `;
@@ -20,7 +23,9 @@ export const HeaderPageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin: auto;
+  justify-content: start;
 
+  height: 100%;
   width: 100%;
 `;
 

@@ -22,7 +22,8 @@ export const Header = styled.header`
   ${breakpointsMedia({
     md: css`
       max-width: 573px;
-      margin: auto;
+      margin-left: auto;
+      margin-right: auto;
       justify-content: flex-start;
 
       padding: 56px 0;

@@ -55,19 +55,25 @@ export default function Home() {
     return route.title;
   }
 
+  function isHappyPathRoute(pathname: string) {
+    return pathname !== '/404' && pathname !== '/500';
+  }
+
   return (
     <Header>
-      <motion.div
-        className="page-marker-wrapper"
-        initial={{ y: -500 }}
-        animate={{ y: 0 }}
-        transition={{ ease: 'easeInOut', duration: 1.5 }}
-      >
-        <PageMarker>
-          <div />
-          <p>{getRouteTitle(routerPathName)}</p>
-        </PageMarker>
-      </motion.div>
+      {isHappyPathRoute(routerPathName) && (
+        <motion.div
+          className="page-marker-wrapper"
+          initial={{ y: -500 }}
+          animate={{ y: 0 }}
+          transition={{ ease: 'easeInOut', duration: 1.5 }}
+        >
+          <PageMarker>
+            <div />
+            <p>{getRouteTitle(routerPathName)}</p>
+          </PageMarker>
+        </motion.div>
+      )}
       <Link href="/">
         <Logo />
       </Link>
