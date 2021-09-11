@@ -22,6 +22,7 @@ export const typographyVariants = {
     lineHeight: '200px',
     letterSpacing: '-5px',
     fontWeight: '700',
+    fontSizeMd: '120px',
   },
   heading1Small: {
     fontSize: '80px',
@@ -29,8 +30,11 @@ export const typographyVariants = {
     letterSpacing: '-2px',
     fontWeight: '700',
     fontSizeSm: '40px',
+    fontSizeMd: '56px',
     lineHeightSm: '48px',
+    lineHeightMd: '56px',
     letterSpacingSm: '-1.2px',
+    letterSpacingMd: '-2px',
   },
   heading2: {
     fontSize: '56px',
