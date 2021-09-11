@@ -1,5 +1,5 @@
 <div style="display: flex; justify-content: center; margin-bottom: 80px">
-  <img src="./public/assets/logo.svg" alt="drawing" width="80%"/>
+  <img src="./public/assets/logo.svg" alt="drawing" width="100%"/>
 </div>
 
 # About
@@ -13,7 +13,7 @@ For more, check the available [Wiki](https://github.com/leonardonegrao/arch-stud
 A live version is available [here](https://arch-studio-blush.vercel.app/), thanks to Vercel.
 
 <div style="display: flex; justify-content: center; margin: 80px 0;">
-  <img src="./mocks-arch-studio.png" alt="drawing" width="80%"/>
+  <img src="./mocks-arch-studio.png" alt="drawing" width="100%"/>
 </div>
 
 # 💻 Get Started
