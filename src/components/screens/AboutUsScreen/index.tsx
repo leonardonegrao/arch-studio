@@ -1,13 +1,14 @@
-import Hero from './components/Hero';
 import LeadersSection from './components/LeadersSection';
 import { StyledAboutUsScreen } from './style';
 
+import Hero from '@components/common/Hero';
 import Image from '@components/common/Image';
 import Typography from '@components/foundation/Typography';
 
 import Leader from '@models/Leader';
 
 import HerigateImg from '@public/assets/about/image-heritage.jpg';
+import HeroImg from '@public/assets/about/image-hero.jpg';
 
 interface AboutUsProps {
   leaders: Leader[];
@@ -16,7 +17,18 @@ interface AboutUsProps {
 export default function AboutUsScreen({ leaders }: AboutUsProps) {
   return (
     <StyledAboutUsScreen>
-      <Hero />
+      <Hero
+        heroTitle="About"
+        heroImg={HeroImg}
+      >
+        <Typography variant="heading1Small" color="veryDarkBlue" tag="h1">
+              Your team of professionals
+        </Typography>
+
+        <Typography variant="body" color="darkGrey" tag="p">
+              Our small team of world-class professionals will work with you every step of the way. Strong relationships are at the core of everything we do. This extends to the relationship our projects have with their surroundings.
+        </Typography>
+      </Hero>
       
       <div className="justified-content-wrapper">
         <section className="heritage-wrapper">
