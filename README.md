@@ -4,7 +4,7 @@
 
 # About
 
-Arch Studio is a website developed for a ficticious architecture agency. The concept and design is from Frontend Mentor, all the development was planned and done by myself.
+Arch Studio is a website developed for a ficticious architecture agency. The concept and design are from Frontend Mentor, but all the development was planned and done by myself.
 
 The purpose of the project was not only to train skills and the use of the used stack, but to define a blueprint for future projects, because of this, it carries a lot of concepts, technologies and a complete Wiki with instructions and overviews.
 
@@ -16,7 +16,7 @@ A live version is available [here](https://arch-studio-blush.vercel.app/), thank
   <img src="./mocks-arch-studio.png" alt="drawing" width="100%"/>
 </div>
 
-# 💻 Get Started
+# 💻 Run Locally
 
 The requirements to run this applications locally are:
 
@@ -42,18 +42,20 @@ yarn dev
 
 This project was made with:
 
-- React.js
-- Next.js
-- TypeScript
-- Styled Components
-- Framer Motion
-- GraphQL
-- DatoCMS
-- ESLint
-- Husky
-- Vercel
-- Lottie
-- Commitlint
+- [React.js](https://github.com/facebook/react)
+- [Next.js](https://github.com/vercel/next.js/)
+- [TypeScript](https://github.com/microsoft/TypeScript)
+- [Styled Components](https://github.com/styled-components/styled-components)
+- [Framer Motion](https://github.com/framer/motion)
+- [GraphQL](https://github.com/graphql/graphql-js)
+- [DatoCMS](https://www.datocms.com/)
+- [ESLint](https://github.com/eslint/eslint)
+- [Husky](https://github.com/typicode/husky)
+- [Vercel](https://vercel.com/dashboard)
+- [Lottie](https://github.com/chenqingspring/react-lottie)
+- [Commitlint](https://github.com/conventional-changelog/commitlint)
 - ☕ + 🎧
 
-And a special thanks to [Frontend Mentor](https://www.frontendmentor.io/solutions), for offering the design and assets 🙏.
+A special thanks to [Frontend Mentor](https://www.frontendmentor.io/solutions), for providing the design and assets 🙏.
+
+
