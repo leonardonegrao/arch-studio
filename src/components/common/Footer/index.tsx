@@ -33,7 +33,9 @@ export default function Footer() {
       </div>
 
       <div className="button-wrapper">
-        <Button variant="default">See our portfolio</Button>
+        <Link href="/portfolio">
+          <Button variant="default">See our portfolio</Button>
+        </Link>
       </div>
 
       <div className="background" />

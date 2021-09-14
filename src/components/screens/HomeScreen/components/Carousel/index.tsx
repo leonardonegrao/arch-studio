@@ -11,6 +11,7 @@ import {
 } from './styles';
 
 import Button from '@components/common/Button';
+import Link from '@components/common/Link';
 import Typography from '@components/foundation/Typography';
 
 import Project, { ProjectImage } from '@models/Project';
@@ -78,7 +79,9 @@ export default function Carousel({ carouselProjects }: CarouselProps) {
         </Typography>
 
         <div style={{ marginTop: '40px' }}>
-          <Button variant="default">See our portfolio</Button>
+          <Link href="/portfolio">
+            <Button variant="default">See our portfolio</Button>
+          </Link>
         </div>
       </CarouselItemInfo>
       <CarouselImageWrapper>
