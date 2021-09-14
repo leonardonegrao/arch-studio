@@ -55,7 +55,7 @@ export const HeroWrapper = styled.section`
       grid-gap: 12px 30px;
 
       .page-title {
-        grid-column: 6 / 12;
+        grid-column: span / 12;
         justify-self: start;
         margin-left: -16px;
         grid-row: 3 / 5;

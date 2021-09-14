@@ -41,6 +41,10 @@ export default function ContactScreen() {
         </Typography>
       </Hero>
 
+      <div className="separator-line">
+        <div className="separator-line__line" />
+      </div>
+
       <StyledContactDetails>
         <Typography variant="heading1Small" color="veryDarkBlue" tag="h1">
           Contact Details

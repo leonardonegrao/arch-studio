@@ -7,12 +7,41 @@ export const StyledContactScreen = styled.div`
   flex-direction: column;
 
   width: 100%;
+
+  .separator-line {
+    width: 100%;
+    max-width: 311px;
+    margin: auto;
+    margin-top: 72px;
+    margin-bottom: 67px;
+  }
+
+  .separator-line__line {
+    width: 65px;
+    height: 1px;
+
+    background: ${({ theme }) => theme.colors.lightGrey};
+  }
+
+  ${breakpointsMedia({
+    md: css`
+      .separator-line {
+        max-width: 573px;
+        margin-top: 200px;
+        margin-bottom: 74px;
+      }
+    `,
+    lg: css`
+      .separator-line {
+        max-width: 1110px;
+      }
+    `,
+  })}
 `;
 
 export const StyledContactDetails = styled.div`
   max-width: 311px;
   margin: auto;
-  margin-top: 72px;
 
   & > h1 {
     margin-bottom: 48px;
@@ -24,6 +53,12 @@ export const StyledContactDetails = styled.div`
 
     .office__title {
       font-weight: 700;
+    }
+
+    .office__content {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
     }
   }
 
@@ -60,11 +95,28 @@ export const StyledContactDetails = styled.div`
 
         .office__content {
           max-width: 350px;
-
-          span {
-            display: block;
-          }
         }
+      }
+    `,
+    lg: css`
+      display: flex;
+      max-width: 1110px;
+      gap: 30px;
+      
+      & > h1 {
+        font-size: 56px;
+        line-height: 56px;
+      }
+
+      .office {
+        max-width: 350px;
+        flex-direction: column;
+
+        gap: 35px;
+      }
+
+      .office + .office {
+        margin-top: 0;
       }
     `,
   })}
@@ -73,6 +125,16 @@ export const StyledContactDetails = styled.div`
 export const MapWrapper = styled.div`
   margin-top: 72px;
   margin-bottom: 72px;
+
+  ${breakpointsMedia({
+    md: css`
+      margin-top: 200px;
+      margin-bottom: 200px;
+    `,
+    lg: css`
+      margin-bottom: 160px;
+    `,
+  })}
 `;
 
 export const FormWrapper = styled.div`
