@@ -1,9 +1,16 @@
+import { ButtonHTMLAttributes } from 'react';
 import styled, { css } from 'styled-components';
 
 import ArrowIcon from '../icons/ArrowIcon';
 
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  variant: 'default' | 'square';
+  children?: React.ReactNode;
+  showArrow?: boolean;
+}
+
 interface PropsButtonWrapper {
-  variant: 'default' | 'square'
+  variant: 'default' | 'square';
 }
 
 const ButtonDefault = css`
@@ -50,7 +57,7 @@ export const ButtonWrapper = styled.button<PropsButtonWrapper>`
 
 export default function Button({
   variant, children = null, showArrow = true, ...props
-}) {
+}: ButtonProps) {
   return (
     <ButtonWrapper variant={variant} {...props}>
       {children && children}
