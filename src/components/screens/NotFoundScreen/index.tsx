@@ -38,7 +38,7 @@ export default function NotFoundScreen() {
       </Typography>
 
       <Link href="/">
-        <Button variant="default" href="/">Take me back home</Button>
+        <Button variant="default">Take me back home</Button>
       </Link>
     </NotFoundScreenWrapper>
   );
