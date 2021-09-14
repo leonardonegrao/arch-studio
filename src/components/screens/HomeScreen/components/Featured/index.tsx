@@ -50,7 +50,9 @@ export default function Featured({ featuredProjects }: FeaturedProps) {
           </ProjectComponent>
         )))}
       </FeaturedProjectsWrapper>
-      <Button variant="default" className="featured-button">See All</Button>
+      <Link href="/portfolio" className="featured-button">
+        <Button variant="default">See All</Button>
+      </Link>
     </FeaturedContainer>
   );
 }

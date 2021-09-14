@@ -4,6 +4,7 @@ import React from 'react';
 import { AboutUsContainer } from './style';
 
 import Button from '@components/common/Button';
+import Link from '@components/common/Link';
 
 import imageSmallTeam from '@public/assets/home/desktop/image-small-team.jpg';
 
@@ -15,7 +16,9 @@ export default function AboutUsSection() {
           Small team, big ideas
         </h1>
 
-        <Button variant="default">About Us</Button>
+        <Link href="/about-us">
+          <Button variant="default">About Us</Button>
+        </Link>
       </div>
 
       <Image

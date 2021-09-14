@@ -17,6 +17,10 @@ export const FeaturedContainer = styled.section`
 
   .featured-button {
     order: 3;
+    
+    button {
+      width: 100%;
+    }
   }
 
   ${breakpointsMedia({
@@ -46,7 +50,6 @@ export const FeaturedContainer = styled.section`
       max-width: 1110px;
 
       .featured-button {
-        /* grid-column: 10/13; */
         margin-left: 0px;
         
         grid-area: button;
